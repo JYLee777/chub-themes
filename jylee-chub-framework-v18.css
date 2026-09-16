@@ -1416,3 +1416,53 @@ body:has(.jy-page.jy-beatrix) .jy-scenario-card:hover .jy-scenario-img{
   filter:brightness(1.02) saturate(1)!important;
   object-position:center 38%!important;
 }
+
+
+/* ===== MOBILE ALIGNMENT CLEANUP ===== */
+
+@media (max-width:768px){
+
+  /* Stack and center regular JYLee rows */
+  body:has(.jy-page.jy-beatrix) .jy-row{
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    justify-content:center!important;
+  }
+
+  /* Prevent desktop column sizing from causing offsets */
+  body:has(.jy-page.jy-beatrix) .jy-col-12,
+  body:has(.jy-page.jy-beatrix) .jy-col-8,
+  body:has(.jy-page.jy-beatrix) .jy-col-7,
+  body:has(.jy-page.jy-beatrix) .jy-col-6,
+  body:has(.jy-page.jy-beatrix) .jy-col-5,
+  body:has(.jy-page.jy-beatrix) .jy-col-4{
+    flex:0 0 100%!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  /* Section headers */
+  body:has(.jy-page.jy-beatrix) .jy-section-title{
+    width:100%!important;
+    text-align:center!important;
+  }
+
+  /* Shoutout/button rows */
+  body:has(.jy-page.jy-beatrix) .jy-btn-row{
+    display:flex!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:10px!important;
+    width:100%!important;
+  }
+
+  body:has(.jy-page.jy-beatrix) .jy-btn-row .jy-btn{
+    justify-content:center!important;
+    text-align:center!important;
+  }
+}
