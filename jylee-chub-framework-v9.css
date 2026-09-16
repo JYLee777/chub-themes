@@ -1525,3 +1525,32 @@ body:has(.jy-page.jy-beatrix) .jy-section::after{
   pointer-events:none!important;
 }
 
+
+.jy-changelog-list{
+  list-style:none!important;
+  margin:0!important;
+  padding:0!important;
+}
+
+.jy-changelog-list li{
+  list-style:none!important;
+  display:grid!important;
+  grid-template-columns:90px 1fr!important;
+  gap:12px!important;
+  align-items:start!important;
+  margin:0!important;
+  padding:8px 0!important;
+  border-bottom:1px solid rgba(255,255,255,.06)!important;
+  color:var(--jy-text-soft)!important;
+}
+
+.jy-changelog-list li:last-child{
+  border-bottom:none!important;
+}
+
+.jy-changelog-date{
+  color:var(--jy-accent-2)!important;
+  font-weight:700!important;
+  letter-spacing:.03em!important;
+  white-space:nowrap!important;
+}
