@@ -1,0 +1,1253 @@
+/* =========================================================
+   JYLEE — NEPHELIA SKIN V1
+   Theme: Celestial High-Elf Sanctuary
+   Requires: jylee-chub-framework-v19.css
+   Activate with: <div class="jy-page jy-nephelia">
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   THEME VARIABLES
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia){
+  --jy-accent:#a8d8df;
+  --jy-accent-2:#c8b8e5;
+  --jy-accent-3:#91bfa8;
+
+  --jy-bg:#081116;
+  --jy-panel:rgba(10,20,26,.89);
+  --jy-panel-soft:rgba(18,31,37,.80);
+  --jy-border:rgba(168,216,223,.18);
+
+  --jy-text:#edf5f4;
+  --jy-text-soft:#c4d2d2;
+  --jy-title:#f7fbfa;
+
+  --jy-shadow:0 16px 42px rgba(0,0,0,.42);
+
+  --jy-font-body:'DM Sans','Segoe UI',system-ui,sans-serif;
+  --jy-font-display:'Cormorant Garamond',Georgia,serif;
+
+  --jy-page-overlay:
+    linear-gradient(
+      to bottom,
+      rgba(5,12,17,.08) 0%,
+      rgba(7,15,21,.36) 45%,
+      rgba(6,13,18,.72) 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND / ATMOSPHERE
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-bg-image{
+  opacity:var(--jy-bg-opacity,.48)!important;
+  filter:
+    saturate(.90)
+    contrast(1.03)
+    brightness(.90)!important;
+}
+
+body:has(.jy-page.jy-nephelia)::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(168,216,223,.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 18% 75%,
+      rgba(145,191,168,.10),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 52% 42%,
+      rgba(200,184,229,.055),
+      transparent 34%
+    );
+
+  opacity:.9;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-page{
+  max-width:1380px!important;
+  padding-top:10px!important;
+  font-family:var(--jy-font-body)!important;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-hero{
+  gap:28px!important;
+  align-items:flex-start!important;
+  margin-bottom:26px!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-hero-copy{
+  position:relative;
+  padding:34px 25px 18px!important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,15,20,.78) 0%,
+      rgba(8,20,26,.61) 60%,
+      rgba(8,20,26,.18) 90%,
+      transparent 100%
+    )!important;
+
+  backdrop-filter:blur(2px);
+}
+
+body:has(.jy-page.jy-nephelia) .jy-nephy-motto{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  margin:0 0 18px;
+  padding:6px 15px;
+
+  border:1px solid rgba(168,216,223,.25);
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(168,216,223,.09),
+      rgba(200,184,229,.07)
+    );
+
+  color:#c8e5e8;
+
+  font-family:var(--jy-font-body);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+
+  box-shadow:
+    inset 0 0 18px rgba(168,216,223,.035),
+    0 4px 18px rgba(0,0,0,.16);
+}
+
+body:has(.jy-page.jy-nephelia) .jy-title{
+  color:#f8fcfb!important;
+
+  font-family:var(--jy-font-display)!important;
+  font-weight:600!important;
+
+  letter-spacing:.015em!important;
+
+  text-shadow:
+    0 3px 14px rgba(0,0,0,.72),
+    0 0 28px rgba(168,216,223,.12)!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-subtitle{
+  color:#bfdce0!important;
+
+  font-family:var(--jy-font-display)!important;
+  font-weight:500!important;
+
+  letter-spacing:.04em!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-blurb{
+  color:#d7e3e2!important;
+  font-family:var(--jy-font-body)!important;
+  line-height:1.78!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-hero-sticky{
+  pointer-events:none!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-hero-image{
+  display:block!important;
+
+  width:100%!important;
+  height:auto!important;
+
+  max-height:76vh!important;
+
+  object-fit:contain!important;
+  object-position:center top!important;
+
+  border:none!important;
+  outline:none!important;
+  border-radius:0!important;
+
+  background:transparent!important;
+  box-shadow:none!important;
+
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+
+  filter:
+    drop-shadow(0 22px 34px rgba(0,0,0,.50))
+    drop-shadow(0 0 24px rgba(168,216,223,.09))!important;
+}
+
+
+/* =========================================================
+   FLOATING CHIBI
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-nephy-chibi{
+  position:fixed;
+
+  right:22px;
+  bottom:18px;
+
+  z-index:9999;
+
+  display:block;
+
+  width:clamp(82px,10vw,112px);
+  height:auto;
+  max-width:none;
+
+  margin:0;
+  padding:0;
+
+  border:none;
+  outline:none;
+
+  background:transparent;
+
+  filter:
+    drop-shadow(0 8px 13px rgba(0,0,0,.45))
+    drop-shadow(0 0 10px rgba(168,216,223,.13));
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   GENERIC SECTION SKIN
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-section{
+  position:relative;
+
+  overflow:hidden;
+
+  border:1px solid rgba(168,216,223,.14)!important;
+  border-radius:15px!important;
+
+  background:
+    linear-gradient(
+      150deg,
+      rgba(15,28,34,.91),
+      rgba(9,18,24,.91)
+    )!important;
+
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.27),
+    inset 0 1px 0 rgba(255,255,255,.025)!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-section::before{
+  content:"";
+
+  position:absolute;
+  inset:4px;
+
+  pointer-events:none;
+
+  border:1px solid rgba(168,216,223,.035);
+  border-radius:11px;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-section::after{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+  right:0;
+
+  height:2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--jy-accent-3) 0%,
+      var(--jy-accent) 45%,
+      var(--jy-accent-2) 72%,
+      var(--jy-accent-3) 100%
+    );
+
+  opacity:.72;
+
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-section>*{
+  position:relative;
+  z-index:1;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-section-title{
+  position:relative;
+
+  padding:16px 20px 19px!important;
+
+  border-bottom:none!important;
+
+  color:#badde1!important;
+
+  font-family:var(--jy-font-display)!important;
+  font-size:13px!important;
+  font-weight:600!important;
+
+  letter-spacing:.14em!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-section-title::after{
+  content:"";
+
+  position:absolute;
+
+  left:13%;
+  right:13%;
+  bottom:8px;
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(168,216,223,.32),
+      rgba(200,184,229,.24),
+      transparent
+    );
+}
+
+body:has(.jy-page.jy-nephelia) .jy-section-body{
+  padding:22px!important;
+}
+
+
+/* =========================================================
+   CHARACTER DUALITY
+   ========================================================= */
+
+.jy-nephy-duality{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  gap:15px;
+}
+
+.jy-nephy-duality-card{
+  padding:20px;
+
+  border:1px solid rgba(168,216,223,.12);
+  border-radius:13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(168,216,223,.055),
+      rgba(255,255,255,.015)
+    );
+}
+
+.jy-nephy-duality-card.power{
+  border-color:rgba(200,184,229,.15);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(200,184,229,.07),
+      rgba(255,255,255,.015)
+    );
+}
+
+.jy-nephy-duality-card h3{
+  margin:0 0 9px;
+
+  color:#c4e1e4;
+
+  font-family:var(--jy-font-display);
+  font-size:20px;
+  font-weight:600;
+}
+
+.jy-nephy-duality-card.power h3{
+  color:#d2c7e7;
+}
+
+.jy-nephy-duality-card p{
+  margin:0;
+
+  color:var(--jy-text-soft);
+
+  font-size:13px;
+  line-height:1.75;
+}
+
+
+/* =========================================================
+   TRUST ARC
+   ========================================================= */
+
+.jy-nephy-trust-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,minmax(0,1fr));
+
+  gap:14px;
+}
+
+.jy-nephy-stage{
+  position:relative;
+
+  min-width:0;
+
+  padding:21px 18px 18px;
+
+  border:1px solid rgba(168,216,223,.13);
+  border-radius:13px;
+
+  background:
+    linear-gradient(
+      155deg,
+      rgba(22,39,45,.82),
+      rgba(12,24,30,.78)
+    );
+}
+
+.jy-nephy-stage::before{
+  content:attr(data-stage);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:36px;
+  height:36px;
+
+  margin:0 0 14px;
+
+  border:1px solid rgba(168,216,223,.35);
+  border-radius:50%;
+
+  background:rgba(168,216,223,.075);
+
+  color:#c8e4e6;
+
+  font-family:var(--jy-font-display);
+  font-size:15px;
+  font-weight:700;
+}
+
+.jy-nephy-stage:nth-child(2)::before{
+  border-color:rgba(200,184,229,.38);
+  background:rgba(200,184,229,.08);
+  color:#d5cae8;
+}
+
+.jy-nephy-stage:nth-child(3)::before{
+  border-color:rgba(145,191,168,.38);
+  background:rgba(145,191,168,.08);
+  color:#bdd8c8;
+}
+
+.jy-nephy-stage h3{
+  margin:0 0 8px;
+
+  color:#edf7f6;
+
+  font-family:var(--jy-font-display);
+  font-size:19px;
+  font-weight:600;
+}
+
+.jy-nephy-stage p{
+  margin:0;
+
+  color:#c3d1d0;
+
+  font-size:12.75px;
+  line-height:1.72;
+}
+
+
+/* =========================================================
+   DETAIL GRIDS — QUIET MOMENTS / MAGIC
+   ========================================================= */
+
+.jy-nephy-detail-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+
+  gap:11px;
+}
+
+.jy-nephy-detail{
+  padding:16px;
+
+  border:1px solid rgba(168,216,223,.10);
+  border-radius:12px;
+
+  background:rgba(255,255,255,.025);
+}
+
+.jy-nephy-detail h4{
+  margin:0 0 7px;
+
+  color:#c1dfe2;
+
+  font-family:var(--jy-font-display);
+  font-size:17px;
+  font-weight:600;
+}
+
+.jy-nephy-detail p{
+  margin:0;
+
+  color:#c1cdcd;
+
+  font-size:12.5px;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   THREAT RESPONSE
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-nephy-threat{
+  background:
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(200,184,229,.10),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(18,22,34,.96),
+      rgba(8,17,23,.97)
+    )!important;
+
+  border-color:rgba(200,184,229,.18)!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-nephy-threat .jy-section-title{
+  color:#d1c4e7!important;
+}
+
+.jy-nephy-threat-line{
+  margin:4px 0 15px;
+
+  color:#eef3f5;
+
+  font-family:var(--jy-font-display);
+  font-size:21px;
+  font-style:italic;
+  line-height:1.5;
+}
+
+.jy-nephy-signals{
+  padding:13px 16px;
+
+  border-left:3px solid rgba(200,184,229,.55);
+  border-radius:0 9px 9px 0;
+
+  background:rgba(200,184,229,.05);
+
+  color:#cfc9dc;
+
+  font-size:12px;
+  line-height:1.7;
+  letter-spacing:.02em;
+}
+
+
+/* =========================================================
+   SCENARIO CARDS — 2 x 3
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-list{
+  display:grid!important;
+
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+
+  gap:20px!important;
+
+  width:100%!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-card{
+  position:relative;
+
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+
+  overflow:hidden!important;
+
+  border:1px solid rgba(168,216,223,.16)!important;
+  border-radius:13px!important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18,32,38,.97),
+      rgba(8,17,23,.98)
+    )!important;
+
+  box-shadow:0 11px 25px rgba(0,0,0,.29)!important;
+
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-card:hover{
+  transform:translateY(-5px)!important;
+
+  border-color:rgba(168,216,223,.46)!important;
+
+  box-shadow:
+    0 18px 34px rgba(0,0,0,.40),
+    0 0 24px rgba(168,216,223,.06)!important;
+}
+
+
+/* Seam-safe: image does NOT scale */
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-img-wrap{
+  position:relative!important;
+
+  width:100%!important;
+  height:auto!important;
+
+  aspect-ratio:2.35/1!important;
+
+  overflow:hidden!important;
+
+  margin:0!important;
+
+  background:#071015!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-img{
+  display:block!important;
+
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+
+  margin:0!important;
+
+  object-fit:cover!important;
+  object-position:center 30%!important;
+
+  transform:none!important;
+
+  filter:
+    brightness(.89)
+    saturate(.86)!important;
+
+  transition:
+    filter .35s ease,
+    object-position 1.4s ease!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-card:hover .jy-scenario-img{
+  transform:none!important;
+
+  object-position:center 36%!important;
+
+  filter:
+    brightness(1.02)
+    saturate(.98)!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-img-wrap::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  z-index:2;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(6,15,20,.65),
+      transparent 52%
+    );
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-num{
+  position:absolute!important;
+
+  top:12px!important;
+  left:12px!important;
+
+  z-index:5!important;
+
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  width:32px!important;
+  height:32px!important;
+
+  border:1px solid rgba(168,216,223,.72)!important;
+  border-radius:50%!important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(45,72,79,.96),
+      rgba(28,31,48,.96)
+    )!important;
+
+  color:#edf9f8!important;
+
+  font-family:var(--jy-font-display)!important;
+  font-size:14px!important;
+  font-weight:700!important;
+
+  box-shadow:0 4px 13px rgba(0,0,0,.50)!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-body{
+  position:relative;
+
+  z-index:3;
+
+  min-height:180px;
+
+  padding:18px!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-body h4{
+  margin:0 0 8px!important;
+
+  color:#eff8f7!important;
+
+  font-family:var(--jy-font-display)!important;
+  font-size:20px!important;
+  font-weight:600!important;
+
+  line-height:1.25!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-scenario-body p{
+  margin:0 0 12px!important;
+
+  color:#c5d2d1!important;
+
+  font-family:var(--jy-font-body)!important;
+  font-size:13px!important;
+  line-height:1.67!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-tag{
+  background:rgba(168,216,223,.07)!important;
+
+  border-color:rgba(168,216,223,.20)!important;
+
+  color:#c5e1e4!important;
+}
+
+
+/* =========================================================
+   CREATOR NOTES
+   ========================================================= */
+
+.jy-nephy-kicker{
+  margin:20px 0 7px;
+
+  color:#b9dce0;
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.jy-nephy-creator-copy{
+  margin:0 0 13px;
+
+  color:var(--jy-text-soft);
+
+  font-size:13px;
+  line-height:1.76;
+}
+
+.jy-nephy-signoff{
+  margin:20px 0 0;
+  padding-top:16px;
+
+  border-top:1px solid rgba(168,216,223,.11);
+
+  color:#cfc5df;
+
+  font-family:var(--jy-font-display);
+  font-size:17px;
+  font-style:italic;
+
+  text-align:center;
+}
+
+
+/* =========================================================
+   SHOUTOUT BUTTONS
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-btn-row{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:9px;
+
+  width:100%;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-btn{
+  padding:9px 15px!important;
+
+  border:1px solid rgba(168,216,223,.18)!important;
+  border-radius:999px!important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(168,216,223,.10),
+      rgba(200,184,229,.07)
+    )!important;
+
+  color:#dceced!important;
+
+  box-shadow:none!important;
+
+  font-family:var(--jy-font-body)!important;
+  font-size:12px!important;
+
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    background .22s ease!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-btn:hover{
+  transform:translateY(-2px)!important;
+
+  border-color:rgba(168,216,223,.44)!important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(168,216,223,.17),
+      rgba(200,184,229,.11)
+    )!important;
+}
+
+
+/* =========================================================
+   ATTRIBUTION
+   ========================================================= */
+
+.jy-nephy-credit{
+  margin:18px 0 0;
+  padding-top:15px;
+
+  border-top:1px solid rgba(168,216,223,.10);
+
+  color:#95a9aa;
+
+  font-size:11px;
+  line-height:1.65;
+
+  text-align:center;
+}
+
+
+/* =========================================================
+   TYPE SAFEGUARDS
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) .jy-title,
+body:has(.jy-page.jy-nephelia) .jy-subtitle,
+body:has(.jy-page.jy-nephelia) .jy-section-title,
+body:has(.jy-page.jy-nephelia) .jy-scenario-body h4{
+  font-family:var(--jy-font-display)!important;
+}
+
+body:has(.jy-page.jy-nephelia) .jy-blurb,
+body:has(.jy-page.jy-nephelia) .jy-section-body,
+body:has(.jy-page.jy-nephelia) .jy-scenario-body p{
+  font-family:var(--jy-font-body)!important;
+}
+
+
+/* =========================================================
+   NATIVE CHUB CLEANUP
+   ========================================================= */
+
+body:has(.jy-page.jy-nephelia) div.mt-2>.font-size-message{
+  display:none!important;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width:1025px){
+
+  body:has(.jy-page.jy-nephelia) .jy-hero{
+    display:flex!important;
+
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+
+    align-items:flex-start!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-copy{
+    order:1!important;
+
+    flex:0 0 calc(58.3333% - 14px)!important;
+    max-width:calc(58.3333% - 14px)!important;
+
+    min-width:0!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-visual{
+    order:2!important;
+
+    flex:0 0 calc(41.6667% - 14px)!important;
+    max-width:calc(41.6667% - 14px)!important;
+
+    min-width:0!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-sticky{
+    position:relative!important;
+
+    top:auto!important;
+
+    display:flex!important;
+
+    align-items:center!important;
+    justify-content:flex-start!important;
+
+    height:auto!important;
+    min-height:0!important;
+
+    padding-top:20px!important;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width:769px) and (max-width:1024px){
+
+  body:has(.jy-page.jy-nephelia) .jy-hero{
+    display:flex!important;
+
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+
+    gap:22px!important;
+
+    align-items:flex-start!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-copy,
+  body:has(.jy-page.jy-nephelia) .jy-hero-visual{
+    flex:0 0 calc(50% - 11px)!important;
+    max-width:calc(50% - 11px)!important;
+
+    min-width:0!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-copy{
+    order:1!important;
+
+    padding:24px 18px 12px!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-visual{
+    order:2!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-sticky{
+    position:relative!important;
+
+    top:auto!important;
+
+    height:auto!important;
+    min-height:0!important;
+
+    padding-top:22px!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-image{
+    max-height:58vh!important;
+  }
+
+  .jy-nephy-trust-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .jy-nephy-detail-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:768px){
+
+  body:has(.jy-page.jy-nephelia) .jy-page{
+    padding-left:10px!important;
+    padding-right:10px!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-row{
+    width:100%!important;
+
+    margin-left:auto!important;
+    margin-right:auto!important;
+
+    justify-content:center!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-col-12,
+  body:has(.jy-page.jy-nephelia) .jy-col-8,
+  body:has(.jy-page.jy-nephelia) .jy-col-7,
+  body:has(.jy-page.jy-nephelia) .jy-col-6,
+  body:has(.jy-page.jy-nephelia) .jy-col-5,
+  body:has(.jy-page.jy-nephelia) .jy-col-4{
+    flex:0 0 100%!important;
+
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero{
+    display:flex!important;
+
+    flex-direction:column!important;
+
+    gap:8px!important;
+
+    min-height:0!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-visual{
+    order:1!important;
+
+    width:100%!important;
+    max-width:100%!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-copy{
+    order:2!important;
+
+    width:100%!important;
+    max-width:100%!important;
+
+    padding:8px 16px 12px!important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,16,21,.72) 0%,
+        rgba(6,16,21,.49) 76%,
+        rgba(6,16,21,.17) 100%
+      )!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-sticky{
+    position:relative!important;
+
+    top:auto!important;
+
+    height:auto!important;
+    min-height:0!important;
+
+    padding-top:0!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-hero-image{
+    width:100%!important;
+
+    max-height:52vh!important;
+
+    object-fit:contain!important;
+    object-position:center top!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-title{
+    font-size:clamp(39px,11vw,60px)!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-section-title{
+    width:100%!important;
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-section-body{
+    padding:16px!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-scenario-list{
+    grid-template-columns:1fr!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-scenario-body{
+    min-height:0!important;
+    padding:15px!important;
+  }
+
+  .jy-nephy-duality,
+  .jy-nephy-trust-grid,
+  .jy-nephy-detail-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-btn-row{
+    justify-content:center!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-btn{
+    justify-content:center!important;
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-nephy-chibi{
+    right:12px;
+    bottom:12px;
+
+    width:clamp(70px,21vw,92px);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+  body:has(.jy-page.jy-nephelia) .jy-scenario-card,
+  body:has(.jy-page.jy-nephelia) .jy-scenario-img,
+  body:has(.jy-page.jy-nephelia) .jy-btn{
+    transition:none!important;
+  }
+
+  body:has(.jy-page.jy-nephelia) .jy-scenario-card:hover,
+  body:has(.jy-page.jy-nephelia) .jy-scenario-card:hover .jy-scenario-img,
+  body:has(.jy-page.jy-nephelia) .jy-btn:hover{
+    transform:none!important;
+  }
+}
+
+
+/* =========================================================
+   NEPHELIA CHIBI — FAVORITE BUTTON ALIGNMENT
+   ========================================================= */
+
+/* Desktop */
+body:has(.jy-page.jy-nephelia) .jy-nephy-chibi{
+  position:fixed!important;
+
+  right:32px!important;
+  bottom:96px!important;
+
+  width:94px!important;
+  height:auto!important;
+
+  max-width:none!important;
+
+  margin:0!important;
+  padding:0!important;
+
+  z-index:9999!important;
+
+  border:none!important;
+  outline:none!important;
+  background:transparent!important;
+
+  filter:
+    drop-shadow(0 8px 13px rgba(0,0,0,.45))
+    drop-shadow(0 0 10px rgba(168,216,223,.13))!important;
+
+  pointer-events:none!important;
+}
+
+
+/* Tablet */
+@media (min-width:769px) and (max-width:1024px){
+
+  body:has(.jy-page.jy-nephelia) .jy-nephy-chibi{
+    right:22px!important;
+    bottom:92px!important;
+    width:88px!important;
+  }
+
+}
+
+
+/* Mobile */
+@media (max-width:768px){
+
+  body:has(.jy-page.jy-nephelia) .jy-nephy-chibi{
+    right:10px!important;
+    bottom:88px!important;
+    width:76px!important;
+  }
+
+}
