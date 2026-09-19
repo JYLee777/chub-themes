@@ -884,3 +884,83 @@ body:has(.jy-page.jy-sizquen) .sq-footer-sub{
     height:300px!important;
   }
 }
+
+
+/* =========================================================
+   SIZQUEN V2 POLISH
+   Hero centering + image fidelity + Scenario 5 face crop
+   ========================================================= */
+
+
+/* =========================================================
+   HERO IMAGE — PRESERVE ORIGINAL COMPOSITION
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .jy-hero-visual{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-frame{
+  width:100%!important;
+  max-width:430px!important;
+  min-height:0!important;
+
+  margin-left:auto!important;
+  margin-right:auto!important;
+
+  align-self:center!important;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-image{
+  display:block!important;
+
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+
+  object-fit:contain!important;
+  object-position:center!important;
+
+  image-rendering:auto!important;
+}
+
+
+/* =========================================================
+   SCENARIO 5 — KEEP FACE IN FRAME
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-media img.sq-scenario-5-focus{
+  object-position:center 18%!important;
+}
+
+
+/* =========================================================
+   MOBILE HERO CENTERING
+   ========================================================= */
+
+@media (max-width:768px){
+
+  body:has(.jy-page.jy-sizquen) .jy-hero-visual{
+    width:100%!important;
+
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-hero-frame{
+    width:min(100%,430px)!important;
+    max-width:430px!important;
+
+    margin:0 auto!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-hero-image{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+
+}
