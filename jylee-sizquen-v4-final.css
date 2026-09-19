@@ -1,0 +1,1109 @@
+/* =========================================================
+   JYLEE — SIZE QUEEN RESORT SKIN V3 FINAL
+   Theme: Sovereign Resort / Luxury Access Hierarchy · Final Polish
+   Requires: jylee-chub-framework-v19.css
+   Activate with: <div class="jy-page jy-sizquen">
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+body:has(.jy-page.jy-sizquen){
+  --sq-gold:#d8b75d;
+  --sq-gold-bright:#f3d57a;
+  --sq-magenta:#ff4fa3;
+  --sq-cyan:#68ddf4;
+  --sq-red:#db4662;
+  --sq-silver:#c9d0d8;
+
+  --sq-bg:#07101a;
+  --sq-bg-2:#0b1420;
+  --sq-panel:rgba(8,15,25,.91);
+  --sq-panel-soft:rgba(15,24,36,.84);
+  --sq-panel-glass:rgba(8,15,25,.72);
+
+  --sq-border:rgba(216,183,93,.20);
+  --sq-border-soft:rgba(255,255,255,.08);
+
+  --sq-text:#f3f5f7;
+  --sq-text-soft:#b9c1cb;
+  --sq-muted:#768291;
+
+  --sq-font-body:'Manrope','Segoe UI',system-ui,sans-serif;
+  --sq-font-display:'Bodoni Moda',Georgia,serif;
+  --sq-font-mono:'IBM Plex Mono',monospace;
+
+  --sq-shadow:0 18px 48px rgba(0,0,0,.46);
+}
+
+body:has(.jy-page.jy-sizquen) .jy-page{
+  color:var(--sq-text);
+  font-family:var(--sq-font-body);
+}
+
+body:has(.jy-page.jy-sizquen) .jy-page.jy-sizquen{
+  position:relative;
+  z-index:2;
+}
+
+/* =========================================================
+   BACKGROUND / ATMOSPHERE
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .jy-bg-image{
+  opacity:var(--jy-bg-opacity,.46)!important;
+  filter:saturate(.92) contrast(1.05) brightness(.78)!important;
+}
+
+body:has(.jy-page.jy-sizquen)::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(to bottom,rgba(3,8,14,.12),rgba(4,9,16,.42) 50%,rgba(3,7,12,.80)),
+    radial-gradient(circle at 84% 16%,rgba(216,183,93,.10),transparent 28%),
+    radial-gradient(circle at 12% 62%,rgba(255,79,163,.08),transparent 32%);
+}
+
+/* =========================================================
+   NATIVE CHUB CLEANUP
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) div.mt-2 > .font-size-message{
+  display:none!important;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .jy-hero{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr)!important;
+  gap:22px!important;
+  align-items:center!important;
+  width:100%!important;
+  margin-bottom:20px!important;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-hero-copy,
+body:has(.jy-page.jy-sizquen) .jy-hero-visual{
+  display:flex!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  flex:none!important;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-hero-copy{
+  align-items:stretch!important;
+  justify-content:center!important;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-hero-visual{
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-console{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  min-height:0;
+  height:auto;
+  box-sizing:border-box;
+  padding:34px 30px;
+  border:1px solid rgba(216,183,93,.24);
+  border-radius:20px;
+  background:
+    linear-gradient(145deg,rgba(7,13,22,.95),rgba(11,20,32,.91));
+  box-shadow:var(--sq-shadow);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-console::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.34;
+  background:
+    linear-gradient(90deg,transparent 0 49.7%,rgba(104,221,244,.10) 49.7% 50%,transparent 50%),
+    linear-gradient(0deg,transparent 0 49.7%,rgba(216,183,93,.08) 49.7% 50%,transparent 50%);
+  background-size:58px 58px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-console::after{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  right:-120px;
+  top:-120px;
+  border:1px solid rgba(216,183,93,.14);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 34px rgba(216,183,93,.025),
+    0 0 0 68px rgba(104,221,244,.018);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-content{
+  position:relative;
+  z-index:2;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-system-line{
+  margin:0 0 12px;
+  color:var(--sq-cyan);
+  font-family:var(--sq-font-mono);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-title{
+  margin:0 0 7px!important;
+  color:#fff7df!important;
+  font-family:var(--sq-font-display)!important;
+  font-size:clamp(42px,5.5vw,78px)!important;
+  line-height:.98!important;
+  font-weight:600!important;
+  letter-spacing:-.025em!important;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-subtitle{
+  margin:0 0 18px!important;
+  color:var(--sq-gold)!important;
+  font-family:var(--sq-font-mono)!important;
+  font-size:11px!important;
+  line-height:1.5!important;
+  letter-spacing:.22em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-blurb{
+  margin:0 0 12px!important;
+  color:var(--sq-text-soft)!important;
+  font-size:13.5px!important;
+  line-height:1.82!important;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-pill-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px 0 0;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 10px;
+  border:1px solid rgba(216,183,93,.20);
+  border-radius:5px;
+  background:rgba(216,183,93,.055);
+  color:#e9d798;
+  font-family:var(--sq-font-mono);
+  font-size:9.5px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-frame{
+  position:relative;
+  width:min(100%,420px)!important;
+  max-width:420px!important;
+  min-height:0!important;
+  height:auto!important;
+
+  margin:0 auto!important;
+  align-self:center!important;
+
+  overflow:hidden;
+  padding:8px;
+  box-sizing:border-box;
+
+  border:1px solid rgba(216,183,93,.28);
+  border-radius:20px;
+
+  background:
+    linear-gradient(135deg,rgba(216,183,93,.13),rgba(255,79,163,.06),rgba(104,221,244,.07));
+
+  box-shadow:var(--sq-shadow);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-frame::before{
+  content:"SIZQUEN // PRIVATE MEMBER ACCESS";
+  position:absolute;
+  top:16px;
+  left:18px;
+  z-index:3;
+  padding:5px 8px;
+  border-radius:4px;
+  background:rgba(4,9,15,.74);
+  color:#f4ddb0;
+  font-family:var(--sq-font-mono);
+  font-size:8.5px;
+  letter-spacing:.14em;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-hero-image{
+  display:block!important;
+
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+
+  margin:0 auto!important;
+
+  object-fit:contain!important;
+  object-position:center!important;
+
+  image-rendering:auto!important;
+
+  border-radius:14px!important;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .jy-section{
+  position:relative;
+  overflow:hidden;
+  margin-bottom:18px!important;
+  border:1px solid var(--sq-border)!important;
+  border-radius:18px!important;
+  background:
+    linear-gradient(145deg,rgba(7,14,23,.94),rgba(12,21,33,.89))!important;
+  box-shadow:var(--sq-shadow)!important;
+
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
+
+  box-sizing:border-box;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--sq-gold),var(--sq-magenta),var(--sq-cyan));
+  opacity:.74;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-section-title{
+  padding:15px 20px 13px!important;
+  border-bottom:1px solid rgba(255,255,255,.06)!important;
+  color:#e7d296!important;
+  font-family:var(--sq-font-mono)!important;
+  font-size:10px!important;
+  font-weight:600!important;
+  letter-spacing:.22em!important;
+  text-transform:uppercase!important;
+  text-align:left!important;
+}
+
+body:has(.jy-page.jy-sizquen) .jy-section-body{
+  padding:20px!important;
+}
+
+/* =========================================================
+   SCENARIO 01 — ARRIVAL PROTOCOL FEATURE
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-arrival{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+  gap:18px;
+  align-items:stretch;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-arrival-media{
+  position:relative;
+  overflow:hidden;
+  min-height:390px;
+  border:1px solid rgba(216,183,93,.20);
+  border-radius:14px;
+  background:#080d14;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-arrival-media::after{
+  content:"01 // ARRIVAL PROTOCOL";
+  position:absolute;
+  left:14px;
+  bottom:14px;
+  z-index:2;
+  padding:6px 9px;
+  border-radius:4px;
+  background:rgba(4,9,15,.80);
+  border:1px solid rgba(216,183,93,.22);
+  color:#f3d57a;
+  font-family:var(--sq-font-mono);
+  font-size:9px;
+  letter-spacing:.12em;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-arrival-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:390px!important;
+  object-fit:cover!important;
+  transition:transform .5s ease;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-arrival-media:hover img{
+  transform:scale(1.025);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-arrival-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:10px 6px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-kicker{
+  margin:0 0 8px;
+  color:var(--sq-cyan);
+  font-family:var(--sq-font-mono);
+  font-size:9px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-title{
+  margin:0 0 12px;
+  color:#fff5d8;
+  font-family:var(--sq-font-display);
+  font-size:clamp(24px,2.8vw,38px);
+  line-height:1.08;
+  font-weight:600;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-arrival-copy p,
+body:has(.jy-page.jy-sizquen) .sq-scenario-body p{
+  margin:0;
+  color:var(--sq-text-soft);
+  font-size:12.75px;
+  line-height:1.75;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-arrival-note{
+  margin-top:16px;
+  padding:12px 14px;
+  border-left:3px solid var(--sq-gold);
+  border-radius:0 8px 8px 0;
+  background:rgba(216,183,93,.07);
+  color:#d7dde4;
+  font-size:12px;
+  line-height:1.7;
+}
+
+/* =========================================================
+   SCENARIOS 02–05
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-card{
+  position:relative;
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:14px;
+
+  background:rgba(8,15,24,.88);
+
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+
+  transition:
+    transform .24s ease,
+    border-color .24s ease,
+    box-shadow .24s ease;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(216,183,93,.17);
+  box-shadow:0 12px 28px rgba(0,0,0,.25);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-media{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:16/9;
+  background:#050a10;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  transition:transform .5s ease,filter .5s ease;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-card:hover .sq-scenario-media img{
+  transform:scale(1.035);
+  filter:saturate(1.06);
+}
+
+/* Scenario 05 has a portrait-oriented composition.
+   Bias the crop upward so the face remains visible. */
+body:has(.jy-page.jy-sizquen) .sq-scenario-media img.sq-scenario-5-focus,
+body:has(.jy-page.jy-sizquen) .sq-scenario-grid .sq-scenario-card:nth-child(4) .sq-scenario-media img{
+  object-position:center top!important;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-num{
+  position:absolute;
+  top:11px;
+  left:11px;
+  z-index:2;
+  min-width:34px;
+  height:28px;
+  padding:0 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(216,183,93,.25);
+  border-radius:4px;
+  background:rgba(4,9,15,.82);
+  color:#f3d57a;
+  font-family:var(--sq-font-mono);
+  font-size:9px;
+  letter-spacing:.12em;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-body{
+  display:flex;
+  flex-direction:column;
+  min-height:185px;
+  padding:16px 16px 17px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-body h3{
+  margin:0 0 8px;
+  color:#fff4d4;
+  font-family:var(--sq-font-display);
+  font-size:20px;
+  line-height:1.18;
+  font-weight:600;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-scenario-tag{
+  align-self:flex-start;
+  margin-top:auto;
+  padding:5px 8px;
+  border:1px solid rgba(104,221,244,.16);
+  border-radius:4px;
+  background:rgba(104,221,244,.055);
+  color:#a7ebf6;
+  font-family:var(--sq-font-mono);
+  font-size:8.5px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+
+/* =========================================================
+   RANKING SYSTEM — ACCESS CARDS
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-rank-intro{
+  margin:0 0 16px;
+  color:var(--sq-muted);
+  font-size:12.5px;
+  line-height:1.75;
+  font-style:italic;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-card{
+  position:relative;
+  overflow:hidden;
+  min-height:210px;
+  padding:18px;
+  border-radius:13px;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-card::after{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  right:-55px;
+  bottom:-55px;
+  border-radius:50%;
+  border:1px solid currentColor;
+  opacity:.09;
+  box-shadow:0 0 0 24px currentColor;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-card.gold{
+  color:var(--sq-gold-bright);
+  border-color:rgba(216,183,93,.34);
+  background:linear-gradient(145deg,#1b1608,#0d1118 62%,#17120a);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-card.silver{
+  color:var(--sq-silver);
+  border-color:rgba(201,208,216,.22);
+  background:linear-gradient(145deg,#111720,#0a0f16 66%,#161b22);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-card.red{
+  color:#f4768d;
+  border-color:rgba(219,70,98,.24);
+  background:linear-gradient(145deg,#1d0b11,#0b0e14 64%,#16080d);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-code{
+  margin:0 0 12px;
+  font-family:var(--sq-font-mono);
+  font-size:9px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  opacity:.85;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-card h3{
+  margin:0 0 6px;
+  color:currentColor;
+  font-family:var(--sq-font-display);
+  font-size:27px;
+  line-height:1;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-size{
+  margin:0 0 12px;
+  color:currentColor;
+  font-family:var(--sq-font-mono);
+  font-size:10px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rank-card p{
+  position:relative;
+  z-index:2;
+  margin:0;
+  color:#b9c1cb;
+  font-size:12px;
+  line-height:1.72;
+}
+
+/* =========================================================
+   MEASUREMENT
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-measure-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-measure-card{
+  padding:17px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;
+  background:rgba(255,255,255,.025);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-measure-card.gold{
+  border-color:rgba(216,183,93,.20);
+  background:rgba(216,183,93,.045);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-measure-card h3{
+  margin:0 0 7px;
+  color:#eef2f5;
+  font-family:var(--sq-font-mono);
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-measure-card.gold h3{
+  color:var(--sq-gold-bright);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-measure-card p{
+  margin:0;
+  color:var(--sq-text-soft);
+  font-size:12.25px;
+  line-height:1.72;
+}
+
+/* =========================================================
+   GALLERY — RESORT DIRECTORY
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-intro{
+  margin:0 0 16px;
+  color:var(--sq-muted);
+  font-size:12px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-scroll{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding:4px 2px 16px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:var(--sq-gold) rgba(255,255,255,.05);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-scroll::-webkit-scrollbar{
+  height:9px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-scroll::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.05);
+  border-radius:999px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-scroll::-webkit-scrollbar-thumb{
+  background:linear-gradient(90deg,var(--sq-gold),var(--sq-magenta),var(--sq-cyan));
+  border-radius:999px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-card{
+  flex:0 0 245px;
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;
+
+  background:#09111b;
+
+  box-shadow:0 10px 24px rgba(0,0,0,.28);
+
+  transition:
+    transform .22s ease,
+    border-color .22s ease;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(216,183,93,.20);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-card img{
+  display:block!important;
+  width:100%!important;
+  height:330px!important;
+  object-fit:cover!important;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-meta{
+  padding:11px 12px 12px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-name{
+  margin:0 0 4px;
+  color:#f0f3f6;
+  font-size:12px;
+  font-weight:700;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-gallery-role{
+  margin:0;
+  color:var(--sq-muted);
+  font-family:var(--sq-font-mono);
+  font-size:8.5px;
+  line-height:1.5;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* =========================================================
+   LOCATIONS
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-location-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-location{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 10px;
+  border:1px solid rgba(104,221,244,.13);
+  border-radius:5px;
+  background:rgba(104,221,244,.045);
+  color:#c8eaf0;
+  font-family:var(--sq-font-mono);
+  font-size:9px;
+  letter-spacing:.06em;
+}
+
+/* =========================================================
+   HOW TO PLAY / NPC SYSTEM
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-rule-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rule{
+  padding:15px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:11px;
+  background:rgba(255,255,255,.022);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rule h4{
+  margin:0 0 6px;
+  color:#f0e2b7;
+  font-family:var(--sq-font-mono);
+  font-size:9.5px;
+  line-height:1.4;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-rule p{
+  margin:0;
+  color:var(--sq-text-soft);
+  font-size:12px;
+  line-height:1.7;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-spectrum{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-spectrum-card{
+  padding:17px;
+  border-radius:12px;
+  border:1px solid rgba(255,79,163,.16);
+  background:linear-gradient(145deg,rgba(255,79,163,.07),rgba(255,255,255,.018));
+}
+
+body:has(.jy-page.jy-sizquen) .sq-spectrum-card.hum{
+  border-color:rgba(219,70,98,.16);
+  background:linear-gradient(145deg,rgba(219,70,98,.07),rgba(255,255,255,.018));
+}
+
+body:has(.jy-page.jy-sizquen) .sq-spectrum-card h3{
+  margin:0 0 7px;
+  color:#ff9bc8;
+  font-family:var(--sq-font-display);
+  font-size:20px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-spectrum-card.hum h3{
+  color:#f38a9c;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-spectrum-card p{
+  margin:0;
+  color:var(--sq-text-soft);
+  font-size:12.25px;
+  line-height:1.75;
+}
+
+/* =========================================================
+   CREDIT / DISCLAIMER
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-credit-grid{
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:12px;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-credit-card{
+  padding:16px;
+  border:1px solid rgba(104,221,244,.13);
+  border-radius:11px;
+  background:rgba(104,221,244,.035);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-credit-card h4{
+  margin:0 0 7px;
+  color:#9ee9f6;
+  font-family:var(--sq-font-mono);
+  font-size:9.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-credit-card p{
+  margin:0;
+  color:var(--sq-text-soft);
+  font-size:12px;
+  line-height:1.72;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-credit-card a{
+  color:#9ee9f6!important;
+  text-decoration:none!important;
+  border-bottom:1px solid rgba(158,233,246,.28);
+}
+
+body:has(.jy-page.jy-sizquen) .sq-disclaimer{
+  padding:16px;
+  border:1px solid rgba(243,213,122,.15);
+  border-radius:11px;
+  background:linear-gradient(145deg,rgba(216,183,93,.055),rgba(219,70,98,.04));
+}
+
+body:has(.jy-page.jy-sizquen) .sq-disclaimer p{
+  margin:0 0 9px;
+  color:var(--sq-text-soft);
+  font-size:12px;
+  line-height:1.72;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-disclaimer p:last-child{
+  margin-bottom:0;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+body:has(.jy-page.jy-sizquen) .sq-footer{
+  padding:15px 8px 4px;
+  text-align:center;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-footer-line{
+  margin:0 0 5px;
+  color:#c7aa59;
+  font-family:var(--sq-font-mono);
+  font-size:9px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-sizquen) .sq-footer-sub{
+  margin:0;
+  color:#65717f;
+  font-size:10px;
+}
+
+/* =========================================================
+   RESPONSIVE — FINAL
+   ========================================================= */
+
+@media (max-width:1024px){
+
+  body:has(.jy-page.jy-sizquen) .jy-hero{
+    grid-template-columns:minmax(0,1fr) minmax(280px,.72fr)!important;
+    gap:18px!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-hero-frame{
+    width:min(100%,380px)!important;
+    max-width:380px!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-arrival{
+    grid-template-columns:1fr;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-arrival-media,
+  body:has(.jy-page.jy-sizquen) .sq-arrival-media img{
+    min-height:320px!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-rank-grid{
+    grid-template-columns:1fr;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-credit-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:900px){
+
+  body:has(.jy-page.jy-sizquen) .jy-hero{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+    align-items:start!important;
+    justify-items:stretch!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-hero-copy,
+  body:has(.jy-page.jy-sizquen) .jy-hero-visual{
+    display:flex!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    flex:none!important;
+    box-sizing:border-box!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-hero-copy{
+    justify-content:center!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-hero-visual{
+    justify-content:center!important;
+    align-items:center!important;
+    justify-self:center!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-hero-console{
+    width:100%!important;
+    max-width:none!important;
+    margin:0 auto!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-hero-frame{
+    width:min(100%,420px)!important;
+    max-width:420px!important;
+    margin:0 auto!important;
+    justify-self:center!important;
+    align-self:center!important;
+  }
+}
+
+@media (max-width:768px){
+
+  body:has(.jy-page.jy-sizquen) .sq-hero-console{
+    padding:24px 20px;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-title{
+    font-size:clamp(38px,12vw,58px)!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-subtitle{
+    letter-spacing:.16em!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-hero-frame{
+    width:min(92%,390px)!important;
+    max-width:390px!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-scenario-grid,
+  body:has(.jy-page.jy-sizquen) .sq-measure-grid,
+  body:has(.jy-page.jy-sizquen) .sq-rule-grid,
+  body:has(.jy-page.jy-sizquen) .sq-spectrum{
+    grid-template-columns:1fr;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-scenario-body{
+    min-height:0;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-gallery-card{
+    flex-basis:220px;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-gallery-card img{
+    height:300px!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-section-title{
+    letter-spacing:.16em!important;
+  }
+}
+
+@media (max-width:480px){
+
+  body:has(.jy-page.jy-sizquen) .sq-hero-frame{
+    width:min(94%,360px)!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-pill-row{
+    gap:6px;
+  }
+
+  body:has(.jy-page.jy-sizquen) .sq-pill{
+    padding:5px 8px;
+    font-size:8.5px;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-section-body{
+    padding:16px!important;
+  }
+}
+
+/* =========================================================
+   HERO TEXT CARD — MOBILE CENTERING FINAL FIX
+   Centers ONLY the Size Queen Resort text card.
+   The hero image card is intentionally left untouched.
+   ========================================================= */
+
+@media (max-width:900px){
+
+  body:has(.jy-page.jy-sizquen) .jy-hero{
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding-left:0!important;
+    padding-right:0!important;
+
+    justify-items:center!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-hero-copy{
+    width:100%!important;
+    max-width:100%!important;
+
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding-left:0!important;
+    padding-right:0!important;
+
+    justify-self:center!important;
+    justify-content:center!important;
+
+    box-sizing:border-box!important;
+  }
+
+  body:has(.jy-page.jy-sizquen) .jy-hero-copy .sq-hero-console{
+    width:calc(100% - 32px)!important;
+    max-width:720px!important;
+
+    margin-left:auto!important;
+    margin-right:auto!important;
+
+    box-sizing:border-box!important;
+  }
+
+}
+
+@media (max-width:480px){
+
+  body:has(.jy-page.jy-sizquen) .jy-hero-copy .sq-hero-console{
+    width:calc(100% - 24px)!important;
+  }
+
+}
+
