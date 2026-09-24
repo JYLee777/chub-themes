@@ -1,0 +1,1441 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================================================
+   JYLEE — ANNA NISHIKINOMIYA V13 FINAL
+   Classified behavioral file / purity-enforcement dossier
+   Final consolidated polish — fresh filename for Chub/jsDelivr cache safety
+   ========================================================= */
+
+/* =========================================================
+   THEME TOKENS
+   ========================================================= */
+
+body:has(.jy-page.jy-anna){
+  --jy-accent:#c44569;
+  --jy-accent-rgb:196,69,105;
+  --jy-accent-2:#9bb8c8;
+  --jy-accent-2-rgb:155,184,200;
+  --jy-accent-3:#f0c27f;
+
+  --jy-bg-deep:#080c14;
+  --jy-panel:rgba(10,15,25,.91);
+  --jy-panel-soft:rgba(16,22,35,.78);
+  --jy-card:rgba(255,255,255,.035);
+  --jy-border:rgba(155,184,200,.15);
+
+  --jy-text:#edf2f7;
+  --jy-text-soft:#c4ced9;
+  --jy-text-muted:#8f9baa;
+  --jy-title:#fff8f5;
+
+  --jy-shadow:0 16px 42px rgba(0,0,0,.38);
+  --jy-radius:18px;
+
+  --jy-font-display:'Inter','Segoe UI',system-ui,sans-serif;
+  --jy-font-body:'Inter','Segoe UI',system-ui,sans-serif;
+  --jy-font-mono:'IBM Plex Mono','Consolas',monospace;
+}
+
+
+/* =========================================================
+   CHUB NATIVE TAGLINE — HIDE SAFELY
+   Hides ONLY the strong text node shown above Creator Notes.
+   Never hides its parent container.
+   ========================================================= */
+
+body:has(.jy-page.jy-anna)
+.ant-col-lg-18 > div.mt-2 > .msg-mkdn-container > p > strong{
+  display:none!important;
+}
+
+body:has(.jy-page.jy-anna)
+.ant-col-lg-18 > div.mt-2 > .msg-mkdn-container > p:has(> strong:only-child){
+  margin:0!important;
+  padding:0!important;
+  min-height:0!important;
+  line-height:0!important;
+}
+
+body:has(.jy-page.jy-anna)
+.ant-col-lg-18 > div.mt-2:has(> .msg-mkdn-container > p > strong){
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+
+
+/* =========================================================
+   PAGE / BACKGROUND
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-page{
+  max-width:1380px!important;
+  margin:0 auto!important;
+  padding-top:6px!important;
+  padding-bottom:24px!important;
+  font-family:var(--jy-font-body)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-bg-image{
+  opacity:var(--jy-bg-opacity,.50)!important;
+  object-position:center center!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-row{
+  gap:24px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-page > .jy-section,
+body:has(.jy-page.jy-anna) .jy-page > .jy-row:not(.jy-hero){
+  margin-bottom:24px!important;
+}
+
+
+/* =========================================================
+   HERO — COMPACT DOSSIER LAYOUT
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-hero{
+  align-items:flex-start!important;
+  min-height:0!important;
+  height:auto!important;
+  padding-top:4px!important;
+  padding-bottom:8px!important;
+  margin-top:0!important;
+  margin-bottom:18px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-hero-copy{
+  align-self:flex-start!important;
+  justify-content:flex-start!important;
+  width:100%!important;
+  max-width:660px!important;
+  min-height:0!important;
+
+  margin:0!important;
+  padding:22px 24px 23px!important;
+
+  background:
+    linear-gradient(180deg,rgba(8,12,20,.72) 0%,rgba(8,12,20,.50) 100%)!important;
+  border:1px solid rgba(255,255,255,.085)!important;
+  border-radius:18px!important;
+
+  -webkit-backdrop-filter:blur(9px)!important;
+  backdrop-filter:blur(9px)!important;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.27),
+    inset 0 1px 0 rgba(255,255,255,.025)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-hero-visual{
+  align-self:flex-start!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  min-height:0!important;
+  height:auto!important;
+  padding:0!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-hero-sticky{
+  position:relative!important;
+  top:auto!important;
+  inset:auto!important;
+
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+
+  margin:0!important;
+  padding:0!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-hero-image{
+  display:block!important;
+  width:auto!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:500px!important;
+
+  margin:0 auto!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+
+  object-fit:contain!important;
+
+  filter:
+    drop-shadow(0 18px 26px rgba(0,0,0,.42))
+    drop-shadow(0 0 14px rgba(var(--jy-accent-rgb),.10))!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-kicker{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  width:fit-content!important;
+  max-width:100%!important;
+
+  margin:0 0 12px!important;
+  padding:7px 12px!important;
+
+  background:rgba(7,10,18,.60)!important;
+  border:1px solid rgba(var(--jy-accent-rgb),.22)!important;
+  border-radius:999px!important;
+
+  color:#f0d9df!important;
+  font-family:var(--jy-font-mono)!important;
+  font-size:10px!important;
+  font-weight:700!important;
+  line-height:1.35!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+
+  white-space:normal!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-kicker::before{
+  content:none!important;
+  display:none!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-title{
+  margin:0 0 16px!important;
+
+  color:var(--jy-title)!important;
+  font-family:var(--jy-font-display)!important;
+  font-size:clamp(38px,4.6vw,64px)!important;
+  font-weight:800!important;
+  line-height:.94!important;
+  letter-spacing:.025em!important;
+  text-transform:uppercase!important;
+
+  text-shadow:0 5px 24px rgba(0,0,0,.28)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-title{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+
+  width:100%!important;
+  max-width:100%!important;
+
+  padding:0!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-title-first,
+body:has(.jy-page.jy-anna) .jy-anna-title-last{
+  display:block!important;
+  max-width:100%!important;
+}
+
+/* Hidden in case an older HTML version still contains it. */
+body:has(.jy-page.jy-anna) .jy-subtitle{
+  display:none!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-blurb{
+  max-width:100%!important;
+  margin:0 0 12px!important;
+
+  color:var(--jy-text-soft)!important;
+  font-size:14px!important;
+  line-height:1.78!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-hero-copy .jy-blurb:last-of-type{
+  margin-bottom:0!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-motto{
+  margin:17px 0 0!important;
+  padding:11px 0 2px 14px!important;
+
+  border-left:2px solid rgba(var(--jy-accent-rgb),.50)!important;
+
+  color:#ead0d8!important;
+  font-size:13px!important;
+  line-height:1.72!important;
+  font-style:italic!important;
+}
+
+
+/* =========================================================
+   SECTION SHELL
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-section{
+  position:relative!important;
+  overflow:hidden!important;
+
+  margin-top:0!important;
+
+  background:
+    linear-gradient(180deg,rgba(15,21,34,.94) 0%,rgba(8,13,22,.92) 100%)!important;
+  border:1px solid var(--jy-border)!important;
+  border-radius:var(--jy-radius)!important;
+
+  -webkit-backdrop-filter:blur(9px)!important;
+  backdrop-filter:blur(9px)!important;
+
+  box-shadow:var(--jy-shadow)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:2px;
+
+  background:linear-gradient(
+    90deg,
+    rgba(var(--jy-accent-2-rgb),.72) 0%,
+    rgba(var(--jy-accent-rgb),.92) 52%,
+    rgba(240,194,127,.76) 100%
+  );
+
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-anna) .jy-section-title{
+  padding:14px 20px 12px!important;
+
+  border-bottom:1px solid rgba(255,255,255,.055)!important;
+
+  color:#f5edf0!important;
+  font-family:var(--jy-font-mono)!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  line-height:1.4!important;
+  letter-spacing:.18em!important;
+  text-align:center!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-section-body{
+  padding:21px!important;
+}
+
+
+/* =========================================================
+   PUBLIC / PRIVATE DUALITY
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-anna-duality{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:20px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-duality-card{
+  min-width:0!important;
+  padding:21px!important;
+
+  background:var(--jy-card)!important;
+  border:1px solid rgba(255,255,255,.065)!important;
+  border-radius:15px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-duality-card.public{
+  background:
+    linear-gradient(180deg,rgba(var(--jy-accent-2-rgb),.085),rgba(255,255,255,.025))!important;
+  border-color:rgba(var(--jy-accent-2-rgb),.22)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-duality-card.private{
+  background:
+    linear-gradient(180deg,rgba(var(--jy-accent-rgb),.095),rgba(255,255,255,.025))!important;
+  border-color:rgba(var(--jy-accent-rgb),.22)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-duality-card h3{
+  margin:0 0 11px!important;
+
+  color:#fff7f8!important;
+  font-size:17px!important;
+  font-weight:800!important;
+  line-height:1.25!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-duality-card p{
+  margin:0!important;
+
+  color:var(--jy-text-soft)!important;
+  font-size:13.5px!important;
+  line-height:1.75!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-chip-row{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+  margin-top:14px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-chip{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  padding:5px 10px!important;
+
+  background:rgba(255,255,255,.04)!important;
+  border:1px solid rgba(255,255,255,.095)!important;
+  border-radius:999px!important;
+
+  color:#dbe5ec!important;
+  font-family:var(--jy-font-mono)!important;
+  font-size:9.5px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.07em!important;
+  text-transform:uppercase!important;
+}
+
+
+/* =========================================================
+   CORE CONTRADICTION
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-anna-core{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:14px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-core p{
+  margin:0!important;
+  color:var(--jy-text-soft)!important;
+  font-size:13.5px!important;
+  line-height:1.82!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-user-token{
+  display:inline-block!important;
+  padding:1px 6px!important;
+
+  background:rgba(var(--jy-accent-rgb),.08)!important;
+  border:1px solid rgba(var(--jy-accent-rgb),.16)!important;
+  border-radius:5px!important;
+
+  color:#f2d8df!important;
+  font-family:var(--jy-font-mono)!important;
+  font-size:.92em!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-core-quote{
+  padding:15px 17px 15px 18px!important;
+
+  background:rgba(var(--jy-accent-rgb),.075)!important;
+  border:1px solid rgba(var(--jy-accent-rgb),.16)!important;
+  border-left:3px solid rgba(var(--jy-accent-rgb),.55)!important;
+  border-radius:12px!important;
+
+  color:#f0d7de!important;
+  font-size:13px!important;
+  line-height:1.78!important;
+  font-style:italic!important;
+}
+
+
+/* =========================================================
+   SCENARIO ARCHIVE — VERTICAL SCROLL
+   Crisp fixed-size thumbnails, no image scaling/filter blur.
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-anna-archive-wrap{
+  max-height:700px!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+
+  padding:3px 10px 3px 2px!important;
+
+  scrollbar-width:thin;
+  scrollbar-color:var(--jy-accent) rgba(255,255,255,.04);
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-archive-wrap::-webkit-scrollbar{
+  width:7px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-archive-wrap::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.035)!important;
+  border-radius:999px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-archive-wrap::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--jy-accent-2),var(--jy-accent))!important;
+  border-radius:999px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-archive{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:14px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case{
+  display:grid!important;
+  grid-template-columns:190px minmax(0,1fr)!important;
+  gap:17px!important;
+  align-items:center!important;
+
+  min-width:0!important;
+  padding:14px!important;
+
+  background:rgba(255,255,255,.027)!important;
+  border:1px solid rgba(255,255,255,.065)!important;
+  border-radius:15px!important;
+
+  transition:
+    transform .20s ease,
+    border-color .20s ease,
+    background .20s ease,
+    box-shadow .20s ease!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case:hover{
+  transform:translateY(-2px)!important;
+  background:rgba(var(--jy-accent-rgb),.045)!important;
+  border-color:rgba(var(--jy-accent-rgb),.24)!important;
+  box-shadow:0 8px 20px rgba(0,0,0,.22)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case-img-wrap{
+  position:relative!important;
+  width:190px!important;
+  min-width:190px!important;
+  max-width:190px!important;
+  height:134px!important;
+
+  overflow:hidden!important;
+
+  background:#090d15!important;
+  border:1px solid rgba(255,255,255,.075)!important;
+  border-radius:11px!important;
+
+  box-shadow:0 3px 10px rgba(0,0,0,.18)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case-img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+
+  margin:0!important;
+  padding:0!important;
+
+  object-fit:cover!important;
+  object-position:center 18%!important;
+
+  border:0!important;
+  border-radius:0!important;
+  background:#090d15!important;
+
+  image-rendering:auto!important;
+  filter:none!important;
+  transform:none!important;
+
+  transition:object-position 1.35s ease!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case:hover .jy-anna-case-img,
+body:has(.jy-page.jy-anna) .jy-anna-case:focus-within .jy-anna-case-img{
+  object-position:center 34%!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case-body{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+  min-width:0!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case-meta{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  gap:8px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case-no,
+body:has(.jy-page.jy-anna) .jy-anna-case-tag{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  padding:5px 9px!important;
+
+  border-radius:999px!important;
+
+  font-family:var(--jy-font-mono)!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  line-height:1.1!important;
+  letter-spacing:.07em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case-no{
+  background:rgba(var(--jy-accent-2-rgb),.09)!important;
+  border:1px solid rgba(var(--jy-accent-2-rgb),.17)!important;
+  color:#d7e3ea!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case-tag{
+  background:rgba(var(--jy-accent-rgb),.085)!important;
+  border:1px solid rgba(var(--jy-accent-rgb),.16)!important;
+  color:#efd2da!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case h4{
+  margin:0!important;
+
+  color:#fff5f6!important;
+  font-size:17px!important;
+  font-weight:800!important;
+  line-height:1.18!important;
+  letter-spacing:.015em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-case p{
+  margin:0!important;
+
+  color:var(--jy-text-soft)!important;
+  font-size:13px!important;
+  line-height:1.68!important;
+}
+
+
+/* =========================================================
+   HIDDEN USB — HORIZONTAL EVIDENCE STRIP
+   Restores the old 260 × 350 display size for cleaner assets.
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-anna-usb-intro{
+  max-width:760px!important;
+  margin:0 auto 14px!important;
+
+  color:var(--jy-text-soft)!important;
+  font-size:13px!important;
+  line-height:1.72!important;
+  text-align:center!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-usb-status{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+
+  width:fit-content!important;
+  max-width:100%!important;
+
+  margin:0 auto 18px!important;
+  padding:6px 11px!important;
+
+  background:rgba(var(--jy-accent-rgb),.065)!important;
+  border:1px solid rgba(var(--jy-accent-rgb),.18)!important;
+  border-radius:999px!important;
+
+  color:#efd4db!important;
+  font-family:var(--jy-font-mono)!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.10em!important;
+  text-transform:uppercase!important;
+  text-align:center!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-usb-status::before{
+  content:"●";
+  color:var(--jy-accent)!important;
+  font-size:8px!important;
+  line-height:1!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-usb-scroll{
+  display:flex!important;
+  align-items:stretch!important;
+  gap:15px!important;
+
+  width:100%!important;
+  max-width:100%!important;
+
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+
+  padding:4px 2px 15px!important;
+
+  scroll-snap-type:x proximity;
+  scrollbar-width:thin;
+  scrollbar-color:var(--jy-accent) rgba(255,255,255,.04);
+  -webkit-overflow-scrolling:touch;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-usb-scroll::-webkit-scrollbar{
+  height:7px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-usb-scroll::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.035)!important;
+  border-radius:999px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-usb-scroll::-webkit-scrollbar-thumb{
+  background:linear-gradient(90deg,var(--jy-accent-2),var(--jy-accent))!important;
+  border-radius:999px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-evidence{
+  flex:0 0 260px!important;
+  width:260px!important;
+  min-width:260px!important;
+  max-width:260px!important;
+
+  overflow:hidden!important;
+  scroll-snap-align:start!important;
+
+  background:
+    linear-gradient(180deg,rgba(18,25,39,.97),rgba(8,12,20,.97))!important;
+  border:1px solid rgba(255,255,255,.075)!important;
+  border-radius:14px!important;
+
+  box-shadow:0 7px 20px rgba(0,0,0,.25)!important;
+
+  transition:
+    transform .20s ease,
+    border-color .20s ease,
+    box-shadow .20s ease!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-evidence:hover{
+  transform:translateY(-3px)!important;
+  border-color:rgba(var(--jy-accent-rgb),.25)!important;
+  box-shadow:0 11px 24px rgba(0,0,0,.31)!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-evidence-img{
+  display:block!important;
+  width:260px!important;
+  height:350px!important;
+  min-width:260px!important;
+  min-height:350px!important;
+  max-width:260px!important;
+  max-height:350px!important;
+
+  margin:0!important;
+  padding:0!important;
+
+  object-fit:cover!important;
+  object-position:center 10%!important;
+
+  border:0!important;
+  border-radius:0!important;
+  background:#080b12!important;
+
+  image-rendering:auto!important;
+  filter:none!important;
+  transform:none!important;
+
+  transition:object-position 1.5s ease!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-evidence:hover .jy-anna-evidence-img,
+body:has(.jy-page.jy-anna) .jy-anna-evidence:focus-within .jy-anna-evidence-img{
+  object-position:center 28%!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-evidence-body{
+  padding:11px 13px 13px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-evidence-code{
+  display:block!important;
+  margin:0 0 4px!important;
+
+  color:var(--jy-accent)!important;
+  font-family:var(--jy-font-mono)!important;
+  font-size:8.5px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.10em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-evidence-title{
+  margin:0!important;
+
+  color:#f5edf0!important;
+  font-size:12.5px!important;
+  font-weight:700!important;
+  line-height:1.35!important;
+}
+
+
+/* =========================================================
+   BEHAVIORAL WARNING SIGNS
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-anna-escalation{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:13px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-escalation-card{
+  min-width:0!important;
+  padding:16px 14px!important;
+
+  background:rgba(255,255,255,.032)!important;
+  border:1px solid rgba(255,255,255,.06)!important;
+  border-radius:13px!important;
+
+  text-align:center!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-escalation-step{
+  display:block!important;
+  margin:0 0 8px!important;
+
+  color:var(--jy-accent-3)!important;
+  font-family:var(--jy-font-mono)!important;
+  font-size:8.5px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.11em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-escalation-card h4{
+  margin:0 0 7px!important;
+  color:#fff6f7!important;
+  font-size:14px!important;
+  font-weight:800!important;
+  line-height:1.3!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-escalation-card p{
+  margin:0!important;
+  color:var(--jy-text-soft)!important;
+  font-size:12px!important;
+  line-height:1.58!important;
+}
+
+
+/* =========================================================
+   CREATOR NOTES / SHOUTOUTS
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-anna-creator-row{
+  align-items:flex-start!important;
+  margin-bottom:0!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-creator-row > .jy-col-7,
+body:has(.jy-page.jy-anna) .jy-anna-creator-row > .jy-col-5{
+  align-self:flex-start!important;
+  min-width:0!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-note{
+  color:var(--jy-text-soft)!important;
+  font-size:13.5px!important;
+  line-height:1.80!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-note p{
+  margin:0 0 15px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-note p:last-child{
+  margin-bottom:0!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-mini-kicker{
+  margin:18px 0 8px!important;
+
+  color:#edc99a!important;
+  font-family:var(--jy-font-mono)!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  line-height:1.3!important;
+  letter-spacing:.11em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-anna-support-copy{
+  max-width:460px!important;
+  margin:0 auto 18px!important;
+
+  color:var(--jy-text-soft)!important;
+  font-size:13px!important;
+  line-height:1.72!important;
+  text-align:center!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-btn-row{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  gap:9px!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-btn{
+  background:
+    linear-gradient(135deg,rgba(var(--jy-accent-rgb),.94),rgba(153,49,79,.96))!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:10px!important;
+
+  color:#fff!important;
+  font-family:var(--jy-font-body)!important;
+  font-size:12px!important;
+  font-weight:700!important;
+
+  box-shadow:none!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+}
+
+body:has(.jy-page.jy-anna) .jy-btn:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 8px 18px rgba(0,0,0,.25)!important;
+}
+
+
+/* =========================================================
+   FLOATING CHIBI
+   ========================================================= */
+
+body:has(.jy-page.jy-anna) .jy-anna-chibi{
+  position:fixed!important;
+  right:36px!important;
+  bottom:86px!important;
+  z-index:9999!important;
+
+  display:block!important;
+  width:92px!important;
+  height:auto!important;
+  max-width:none!important;
+
+  margin:0!important;
+  padding:0!important;
+
+  border:0!important;
+  outline:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+
+  object-fit:contain!important;
+
+  filter:
+    drop-shadow(0 8px 11px rgba(0,0,0,.44))
+    drop-shadow(0 0 8px rgba(var(--jy-accent-rgb),.13))!important;
+
+  pointer-events:none!important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1100px){
+
+  body:has(.jy-page.jy-anna) .jy-anna-escalation{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-hero-image{
+    max-height:460px!important;
+  }
+
+}
+
+@media(max-width:900px){
+
+  body:has(.jy-page.jy-anna) .jy-anna-duality{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case{
+    grid-template-columns:170px minmax(0,1fr)!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case-img-wrap{
+    width:170px!important;
+    min-width:170px!important;
+    max-width:170px!important;
+    height:124px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-escalation{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — CENTERED, CLEAN, COMPACT
+   ========================================================= */
+
+@media(max-width:768px){
+
+  body:has(.jy-page.jy-anna) .jy-page{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0 auto!important;
+    padding-top:2px!important;
+    padding-left:0!important;
+    padding-right:0!important;
+    padding-bottom:24px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-row{
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    gap:16px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-hero{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+
+    width:100%!important;
+    min-height:0!important;
+
+    padding-top:0!important;
+    padding-bottom:4px!important;
+    margin:0 auto 16px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-hero-copy{
+    width:calc(100% - 24px)!important;
+    max-width:680px!important;
+
+    margin:0 auto!important;
+    padding:18px 16px 20px!important;
+
+    border-radius:18px!important;
+
+    text-align:left!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-kicker{
+    display:flex!important;
+    width:100%!important;
+    max-width:100%!important;
+
+    margin:0 auto 16px!important;
+    padding:10px 12px!important;
+
+    justify-content:center!important;
+
+    font-size:9px!important;
+    line-height:1.4!important;
+    letter-spacing:.09em!important;
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-title{
+    align-items:center!important;
+
+    width:100%!important;
+    max-width:100%!important;
+
+    margin:0 auto 20px!important;
+    padding:0!important;
+
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-title-first{
+    width:100%!important;
+
+    font-size:clamp(40px,12vw,52px)!important;
+    line-height:.92!important;
+
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-title-last{
+    width:100%!important;
+    max-width:100%!important;
+
+    font-size:clamp(24px,7.4vw,34px)!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+
+    text-align:center!important;
+    white-space:nowrap!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-blurb{
+    margin-bottom:15px!important;
+    font-size:13.5px!important;
+    line-height:1.72!important;
+    text-align:left!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-hero-copy .jy-blurb:last-of-type{
+    margin-bottom:0!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-motto{
+    margin-top:18px!important;
+    padding:13px 12px 13px 16px!important;
+    font-size:12.5px!important;
+    line-height:1.68!important;
+    text-align:left!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-hero-visual,
+  body:has(.jy-page.jy-anna) .jy-hero-sticky{
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+
+    margin:0 auto!important;
+    padding:0!important;
+
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-hero-image{
+    display:block!important;
+    width:auto!important;
+    max-width:min(82vw,360px)!important;
+    height:auto!important;
+    max-height:430px!important;
+    margin:0 auto!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-section{
+    width:calc(100% - 24px)!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    border-radius:16px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-section-title{
+    padding:13px 13px 11px!important;
+    font-size:9.5px!important;
+    line-height:1.45!important;
+    letter-spacing:.12em!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-section-body{
+    padding:16px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-duality,
+  body:has(.jy-page.jy-anna) .jy-anna-escalation{
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-archive-wrap{
+    max-height:620px!important;
+    padding-right:6px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    padding:13px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case-img-wrap{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:auto!important;
+    aspect-ratio:16 / 10!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case-img{
+    width:100%!important;
+    height:100%!important;
+    object-position:center 16%!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case:hover .jy-anna-case-img,
+  body:has(.jy-page.jy-anna) .jy-anna-case:focus-within .jy-anna-case-img{
+    object-position:center 30%!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case h4{
+    font-size:16px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case p{
+    font-size:12.5px!important;
+    line-height:1.62!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-usb-intro{
+    font-size:12.5px!important;
+    line-height:1.66!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-usb-status{
+    font-size:8.5px!important;
+    letter-spacing:.07em!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-evidence{
+    flex:0 0 220px!important;
+    width:220px!important;
+    min-width:220px!important;
+    max-width:220px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-evidence-img{
+    width:220px!important;
+    height:296px!important;
+    min-width:220px!important;
+    min-height:296px!important;
+    max-width:220px!important;
+    max-height:296px!important;
+    object-position:center 8%!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-evidence:hover .jy-anna-evidence-img,
+  body:has(.jy-page.jy-anna) .jy-anna-evidence:focus-within .jy-anna-evidence-img{
+    object-position:center 22%!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-creator-row{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-creator-row > .jy-col-7,
+  body:has(.jy-page.jy-anna) .jy-anna-creator-row > .jy-col-5{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    flex:0 0 100%!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-chibi{
+    right:8vw!important;
+    bottom:90px!important;
+    width:74px!important;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media(max-width:480px){
+
+  body:has(.jy-page.jy-anna) .jy-anna-chibi{
+    right:7vw!important;
+    bottom:88px!important;
+    width:70px!important;
+  }
+
+
+  body:has(.jy-page.jy-anna) .jy-hero-copy,
+  body:has(.jy-page.jy-anna) .jy-section{
+    width:calc(100% - 16px)!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-title-first{
+    font-size:clamp(36px,12vw,46px)!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-title-last{
+    font-size:clamp(22px,7.2vw,30px)!important;
+    letter-spacing:-.01em!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-evidence{
+    flex-basis:205px!important;
+    width:205px!important;
+    min-width:205px!important;
+    max-width:205px!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-evidence-img{
+    width:205px!important;
+    height:276px!important;
+    min-width:205px!important;
+    min-height:276px!important;
+    max-width:205px!important;
+    max-height:276px!important;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  body:has(.jy-page.jy-anna) .jy-anna-case,
+  body:has(.jy-page.jy-anna) .jy-anna-evidence,
+  body:has(.jy-page.jy-anna) .jy-anna-case-img,
+  body:has(.jy-page.jy-anna) .jy-anna-evidence-img,
+  body:has(.jy-page.jy-anna) .jy-btn{
+    transition:none!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-case:hover,
+  body:has(.jy-page.jy-anna) .jy-anna-evidence:hover,
+  body:has(.jy-page.jy-anna) .jy-btn:hover{
+    transform:none!important;
+  }
+
+}
+
+
+/* =========================================================
+
+/* =========================================================
+   TOUCH DEVICES — SUBTLE AUTOMATIC IMAGE PAN
+   ========================================================= */
+
+@keyframes jyAnnaScenarioPan{
+  from{object-position:center 14%}
+  to{object-position:center 30%}
+}
+
+@keyframes jyAnnaUsbPan{
+  from{object-position:center 8%}
+  to{object-position:center 22%}
+}
+
+@media(hover:none) and (pointer:coarse){
+
+  body:has(.jy-page.jy-anna) .jy-anna-case-img{
+    animation:jyAnnaScenarioPan 8s ease-in-out infinite alternate!important;
+  }
+
+  body:has(.jy-page.jy-anna) .jy-anna-evidence-img{
+    animation:jyAnnaUsbPan 10s ease-in-out infinite alternate!important;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  body:has(.jy-page.jy-anna) .jy-anna-case-img,
+  body:has(.jy-page.jy-anna) .jy-anna-evidence-img{
+    animation:none!important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — CHUB NATIVE VERTICAL GAP FIX
+   Removes Chub's forced lower-page min-height without
+   changing desktop behavior or hiding native controls.
+   ========================================================= */
+
+@media(max-width:768px){
+
+  body:has(.jy-page.jy-anna) main.ant-layout-content{
+    min-height:0!important;
+  }
+
+  body:has(.jy-page.jy-anna) main.ant-layout-content > div{
+    min-height:0!important;
+  }
+
+  /* Do not add artificial layout space above the fixed action bar. */
+  body:has(.jy-page.jy-anna) .jy-page{
+    padding-bottom:24px!important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — FINAL PLATFORM GAP FIX
+   The shared JYLee framework reserves:
+   platform height + 2× inset + 60px on BODY.
+   That is useful on desktop, but excessive on phones.
+   Keep only the platform height plus a small safety gap.
+   ========================================================= */
+
+@media(max-width:768px){
+
+  body:has(.jy-page.jy-anna){
+    padding-bottom:calc(var(--jy-platform-height) + 14px)!important;
+  }
+
+}
+
+
+/* =========================================================
+   V13 — MOBILE NATIVE CHUB GAP FIX
+   Chub's main content wrapper carries utility classes such as
+   mb-16 / pb-16. On mobile these stack with the JY fixed action
+   bar reserve and create the large blank well near page end.
+   ========================================================= */
+
+@media(max-width:768px){
+
+  body:has(.jy-page.jy-anna) main.ant-layout-content{
+    min-height:0!important;
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+
+  body:has(.jy-page.jy-anna) main.ant-layout-content.mb-16{
+    margin-bottom:0!important;
+  }
+
+  body:has(.jy-page.jy-anna) main.ant-layout-content.pb-16{
+    padding-bottom:0!important;
+  }
+
+  body:has(.jy-page.jy-anna) main.ant-layout-content.pt-4{
+    padding-top:8px!important;
+  }
+
+  /* Keep only enough document reserve for the fixed action bar. */
+  body:has(.jy-page.jy-anna){
+    padding-bottom:calc(var(--jy-platform-height) + 8px)!important;
+  }
+
+  /* Remove any extra trailing spacing from the final native blocks. */
+  body:has(.jy-page.jy-anna) main.ant-layout-content > :last-child{
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+
+}
