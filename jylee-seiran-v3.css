@@ -1,0 +1,1633 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* =========================================================
+   JYLEE — SEIRAN ISLAND SKIN V3
+   Theme: SHO-Approved Paradise / Tropical Vice Dossier
+   Structure follows the proven Anna + Size Queen framework pattern.
+   Requires: jylee-chub-framework-v19.css
+   ========================================================= */
+
+
+/* =========================================================
+   TOKENS
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran){
+  --sr-pink:#ff6f8f;
+  --sr-pink-rgb:255,111,143;
+
+  --sr-coral:#ff8a72;
+  --sr-coral-rgb:255,138,114;
+
+  --sr-orange:#ffad66;
+  --sr-orange-rgb:255,173,102;
+
+  --sr-gold:#ffd38f;
+  --sr-gold-rgb:255,211,143;
+
+  --sr-red:#ff465f;
+  --sr-red-rgb:255,70,95;
+
+  --sr-bg:#130813;
+  --sr-panel:rgba(28,10,27,.92);
+  --sr-panel-soft:rgba(39,14,35,.84);
+  --sr-card:rgba(255,255,255,.035);
+
+  --sr-border:rgba(255,173,102,.18);
+  --sr-border-hot:rgba(255,111,143,.23);
+
+  --sr-text:#fff5f7;
+  --sr-text-soft:#e5ccd5;
+  --sr-muted:#b995a3;
+
+  --sr-shadow:0 18px 46px rgba(0,0,0,.42);
+
+  --sr-font-body:'Outfit','Segoe UI',system-ui,sans-serif;
+  --sr-font-display:'Outfit','Segoe UI',system-ui,sans-serif;
+  --sr-font-mono:'IBM Plex Mono','Consolas',monospace;
+}
+
+
+/* =========================================================
+   NATIVE CHUB CLEANUP
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran)
+.ant-col-lg-18 > div.mt-2 > .msg-mkdn-container > p > strong{
+  display:none!important;
+}
+
+body:has(.jy-page.jy-seiran)
+.ant-col-lg-18 > div.mt-2 > .msg-mkdn-container > p:has(> strong:only-child){
+  margin:0!important;
+  padding:0!important;
+  min-height:0!important;
+  line-height:0!important;
+}
+
+
+/* =========================================================
+   PAGE / BACKGROUND
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-page{
+  position:relative!important;
+  z-index:2!important;
+
+  width:100%!important;
+  max-width:1380px!important;
+
+  margin:0 auto!important;
+  padding-top:6px!important;
+  padding-bottom:30px!important;
+
+  color:var(--sr-text)!important;
+  font-family:var(--sr-font-body)!important;
+
+  box-sizing:border-box!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-bg-image{
+  opacity:var(--jy-bg-opacity,.38)!important;
+
+  object-fit:cover!important;
+  object-position:center center!important;
+
+  filter:
+    saturate(.94)
+    contrast(1.05)
+    brightness(.74)!important;
+}
+
+body:has(.jy-page.jy-seiran)::after{
+  content:"";
+
+  position:fixed;
+  inset:0;
+  z-index:0;
+
+  pointer-events:none;
+
+  background:
+    radial-gradient(circle at 15% 8%,rgba(var(--sr-orange-rgb),.10),transparent 28%),
+    radial-gradient(circle at 83% 17%,rgba(var(--sr-pink-rgb),.10),transparent 30%),
+    linear-gradient(
+      to bottom,
+      rgba(15,5,16,.10) 0%,
+      rgba(15,5,16,.34) 52%,
+      rgba(10,4,12,.76) 100%
+    );
+}
+
+
+/* =========================================================
+   SHARED WIDTH / ROW DISCIPLINE
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-page > .jy-section,
+body:has(.jy-page.jy-seiran) .jy-page > .jy-row{
+  width:100%!important;
+  max-width:1120px!important;
+
+  margin-left:auto!important;
+  margin-right:auto!important;
+
+  box-sizing:border-box!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-page > .jy-section{
+  margin-bottom:20px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero){
+  display:flex!important;
+  flex-wrap:wrap!important;
+
+  gap:18px!important;
+  align-items:stretch!important;
+
+  margin-bottom:20px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero) > .jy-col-6{
+  flex:1 1 calc(50% - 9px)!important;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero) > .jy-col-4{
+  flex:1 1 calc(33.333% - 12px)!important;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero) > [class*="jy-col-"]{
+  box-sizing:border-box!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero) > [class*="jy-col-"] > .jy-section,
+body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero) > [class*="jy-col-"] > .jy-mini-card{
+  width:100%!important;
+  height:100%!important;
+
+  margin:0!important;
+
+  box-sizing:border-box!important;
+}
+
+
+/* =========================================================
+   HERO — PROVEN SIZE QUEEN PATTERN
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-hero{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr)!important;
+
+  gap:24px!important;
+  align-items:center!important;
+
+  width:100%!important;
+  max-width:1120px!important;
+
+  margin:0 auto 20px!important;
+  padding:4px 0 6px!important;
+
+  min-height:0!important;
+  height:auto!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-copy,
+body:has(.jy-page.jy-seiran) .jy-hero-visual{
+  display:flex!important;
+
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+
+  flex:none!important;
+
+  margin:0!important;
+  padding:0!important;
+
+  box-sizing:border-box!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-copy{
+  align-items:stretch!important;
+  justify-content:center!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-visual{
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-panel{
+  position:relative!important;
+  overflow:hidden!important;
+
+  width:100%!important;
+  min-height:0!important;
+  height:auto!important;
+
+  margin:0!important;
+  padding:30px 28px!important;
+
+  box-sizing:border-box!important;
+
+  border:1px solid rgba(var(--sr-orange-rgb),.23)!important;
+  border-radius:20px!important;
+
+  background:
+    linear-gradient(145deg,rgba(31,10,29,.95),rgba(21,8,23,.91))!important;
+
+  box-shadow:var(--sr-shadow)!important;
+
+  -webkit-backdrop-filter:blur(8px)!important;
+  backdrop-filter:blur(8px)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-panel::before{
+  content:"";
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+
+  height:2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--sr-orange),
+      var(--sr-pink),
+      var(--sr-gold)
+    );
+
+  opacity:.85;
+
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-panel::after{
+  content:"";
+
+  position:absolute;
+  width:270px;
+  height:270px;
+
+  right:-135px;
+  top:-140px;
+
+  border:1px solid rgba(var(--sr-orange-rgb),.10)!important;
+  border-radius:50%;
+
+  box-shadow:
+    0 0 0 38px rgba(var(--sr-pink-rgb),.020),
+    0 0 0 76px rgba(var(--sr-gold-rgb),.012);
+
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-panel > *{
+  position:relative;
+  z-index:2;
+}
+
+body:has(.jy-page.jy-seiran) .jy-overline{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  width:fit-content!important;
+  max-width:100%!important;
+
+  margin:0 0 12px!important;
+  padding:6px 10px!important;
+
+  border:1px solid rgba(var(--sr-orange-rgb),.22)!important;
+  border-radius:999px!important;
+
+  background:rgba(255,255,255,.04)!important;
+
+  color:#ffd5b8!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  line-height:1.35!important;
+  letter-spacing:.11em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-title{
+  margin:0 0 8px!important;
+
+  color:#fff8f4!important;
+
+  font-family:var(--sr-font-display)!important;
+  font-size:clamp(44px,5.3vw,72px)!important;
+  font-weight:800!important;
+  line-height:.92!important;
+  letter-spacing:.015em!important;
+  text-transform:uppercase!important;
+
+  text-shadow:0 5px 25px rgba(0,0,0,.28)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-subtitle{
+  margin:0 0 18px!important;
+
+  color:#ffc08f!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:10px!important;
+  font-weight:700!important;
+  line-height:1.5!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+
+  text-align:left!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-blurb{
+  margin:0 0 12px!important;
+
+  color:var(--sr-text-soft)!important;
+
+  font-size:13.5px!important;
+  line-height:1.80!important;
+
+  text-align:left!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-panel .jy-blurb:last-of-type{
+  margin-bottom:0!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-quote{
+  margin:18px 0 0!important;
+  padding:12px 14px!important;
+
+  border:1px solid rgba(var(--sr-pink-rgb),.16)!important;
+  border-left:3px solid rgba(var(--sr-pink-rgb),.68)!important;
+  border-radius:11px!important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--sr-pink-rgb),.085),
+      rgba(var(--sr-orange-rgb),.035)
+    )!important;
+
+  color:#ffdbe3!important;
+
+  font-size:13px!important;
+  line-height:1.65!important;
+  font-style:italic!important;
+
+  text-align:left!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-sticky{
+  position:relative!important;
+  top:auto!important;
+  inset:auto!important;
+
+  width:min(100%,420px)!important;
+  max-width:420px!important;
+
+  min-height:0!important;
+  height:auto!important;
+  max-height:none!important;
+
+  margin:0 auto!important;
+  padding:8px!important;
+
+  align-self:center!important;
+
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+
+  border:1px solid rgba(var(--sr-orange-rgb),.26)!important;
+  border-radius:20px!important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--sr-orange-rgb),.12),
+      rgba(var(--sr-pink-rgb),.07),
+      rgba(var(--sr-gold-rgb),.05)
+    )!important;
+
+  box-shadow:var(--sr-shadow)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-sticky::before{
+  content:"SEIRAN // APPROVED TOURISM MEDIA";
+
+  position:absolute;
+  top:15px;
+  left:17px;
+  z-index:3;
+
+  padding:5px 8px!important;
+
+  border:1px solid rgba(var(--sr-orange-rgb),.22)!important;
+  border-radius:5px!important;
+
+  background:rgba(18,6,16,.76)!important;
+
+  color:#ffd8bd!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:8px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.10em!important;
+
+  pointer-events:none!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-hero-image{
+  display:block!important;
+
+  width:100%!important;
+  height:auto!important;
+
+  min-height:0!important;
+  max-height:none!important;
+
+  margin:0 auto!important;
+
+  object-fit:contain!important;
+  object-position:center!important;
+
+  image-rendering:auto!important;
+
+  border:0!important;
+  border-radius:14px!important;
+
+  background:transparent!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+
+
+/* =========================================================
+   SECTION SHELL
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-section{
+  position:relative!important;
+  overflow:hidden!important;
+
+  box-sizing:border-box!important;
+
+  border:1px solid var(--sr-border)!important;
+  border-radius:18px!important;
+
+  background:
+    linear-gradient(145deg,rgba(28,10,27,.94),rgba(18,7,20,.91))!important;
+
+  box-shadow:var(--sr-shadow)!important;
+
+  -webkit-backdrop-filter:blur(6px)!important;
+  backdrop-filter:blur(6px)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-section::before{
+  content:"";
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+
+  height:2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--sr-orange),
+      var(--sr-pink),
+      var(--sr-gold)
+    );
+
+  opacity:.72;
+
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-seiran) .jy-section-title{
+  padding:14px 18px 12px!important;
+
+  border-bottom:1px solid rgba(255,255,255,.055)!important;
+
+  color:#ffe1c6!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:9.8px!important;
+  font-weight:700!important;
+  line-height:1.45!important;
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+
+  text-align:center!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-section-body{
+  padding:20px!important;
+
+  color:var(--sr-text-soft)!important;
+
+  font-size:13.25px!important;
+  line-height:1.76!important;
+
+  text-align:left!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-section-body p{
+  margin:0 0 13px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-section-body p:last-child{
+  margin-bottom:0!important;
+}
+
+body:has(.jy-page.jy-seiran) strong{
+  color:#fff0dc!important;
+}
+
+
+/* =========================================================
+   FACTION CARDS
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-mini-card{
+  position:relative!important;
+  overflow:hidden!important;
+
+  padding:19px 17px!important;
+
+  box-sizing:border-box!important;
+
+  border:1px solid rgba(255,255,255,.065)!important;
+  border-radius:15px!important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(37,13,33,.92),
+      rgba(20,8,21,.90)
+    )!important;
+
+  box-shadow:0 10px 28px rgba(0,0,0,.27)!important;
+
+  -webkit-backdrop-filter:blur(6px)!important;
+  backdrop-filter:blur(6px)!important;
+
+  transition:
+    transform .20s ease,
+    border-color .20s ease,
+    box-shadow .20s ease!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-mini-card::before{
+  content:"";
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+
+  height:2px;
+
+  background:var(--sr-pink);
+  opacity:.85;
+}
+
+body:has(.jy-page.jy-seiran) .jy-row > .jy-col-4:nth-child(1) .jy-mini-card::before{
+  background:var(--sr-orange)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-row > .jy-col-4:nth-child(2) .jy-mini-card::before{
+  background:var(--sr-pink)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-row > .jy-col-4:nth-child(3) .jy-mini-card::before{
+  background:var(--sr-gold)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-mini-card:hover{
+  transform:translateY(-2px)!important;
+
+  border-color:rgba(var(--sr-pink-rgb),.20)!important;
+
+  box-shadow:0 14px 32px rgba(0,0,0,.31)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-mini-title{
+  margin:0 0 8px!important;
+
+  color:#fff0dd!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:9.5px!important;
+  font-weight:700!important;
+  line-height:1.3!important;
+  letter-spacing:.10em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-mini-card p{
+  margin:0!important;
+
+  color:var(--sr-text-soft)!important;
+
+  font-size:12.4px!important;
+  line-height:1.65!important;
+
+  text-align:left!important;
+}
+
+
+/* =========================================================
+   VIDEOS
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video-section .jy-section-body,
+body:has(.jy-page.jy-seiran) .jy-seiran-guillotine-section .jy-section-body{
+  text-align:center!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video-frame{
+  position:relative!important;
+  overflow:hidden!important;
+
+  width:100%!important;
+  max-width:1000px!important;
+
+  margin:0 auto!important;
+
+  border:1px solid rgba(var(--sr-orange-rgb),.24)!important;
+  border-radius:15px!important;
+
+  background:#08060a!important;
+
+  box-shadow:
+    0 13px 32px rgba(0,0,0,.36),
+    0 0 24px rgba(var(--sr-pink-rgb),.05)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video-badge{
+  position:absolute!important;
+  top:11px!important;
+  left:11px!important;
+  z-index:3!important;
+
+  max-width:calc(100% - 22px)!important;
+
+  padding:5px 9px!important;
+
+  border:1px solid rgba(var(--sr-orange-rgb),.25)!important;
+  border-radius:999px!important;
+
+  background:rgba(22,7,18,.80)!important;
+
+  color:#ffd8bd!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:8px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+
+  -webkit-backdrop-filter:blur(7px)!important;
+  backdrop-filter:blur(7px)!important;
+
+  pointer-events:none!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video{
+  display:block!important;
+
+  width:100%!important;
+  height:auto!important;
+
+  margin:0!important;
+
+  background:#000!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video-footer{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  width:100%!important;
+
+  margin:0 auto!important;
+  padding:15px 8px 2px!important;
+
+  box-sizing:border-box!important;
+
+  text-align:center!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video-status{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  width:fit-content!important;
+
+  margin:0 auto 9px!important;
+  padding:5px 10px!important;
+
+  border:1px solid rgba(var(--sr-pink-rgb),.20)!important;
+  border-radius:999px!important;
+
+  background:rgba(var(--sr-pink-rgb),.08)!important;
+
+  color:#ffc1cf!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:8px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video-caption{
+  display:block!important;
+
+  width:100%!important;
+  max-width:800px!important;
+
+  margin:0 auto!important;
+
+  color:var(--sr-muted)!important;
+
+  font-size:12.2px!important;
+  line-height:1.65!important;
+
+  text-align:center!important;
+}
+
+
+/* =========================================================
+   RESTRICTED / GUILLOTINE
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-seiran-guillotine-section{
+  border-color:rgba(var(--sr-red-rgb),.26)!important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37,8,17,.95),
+      rgba(18,6,14,.93)
+    )!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-guillotine-section::before{
+  background:
+    linear-gradient(
+      90deg,
+      var(--sr-red),
+      var(--sr-pink),
+      var(--sr-red)
+    )!important;
+
+  opacity:.82!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-warning-row{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  gap:7px!important;
+
+  margin:0 0 14px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-danger-badge{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  padding:5px 9px!important;
+
+  border:1px solid rgba(var(--sr-red-rgb),.23)!important;
+  border-radius:999px!important;
+
+  background:rgba(var(--sr-red-rgb),.08)!important;
+
+  color:#ffbcc5!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:8px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video-danger{
+  border-color:rgba(var(--sr-red-rgb),.32)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-video-danger .jy-seiran-video-badge{
+  border-color:rgba(var(--sr-red-rgb),.28)!important;
+  color:#ffc0c9!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-guillotine-copy{
+  width:100%!important;
+  max-width:1000px!important;
+
+  margin:16px auto 0!important;
+  padding:16px 17px!important;
+
+  box-sizing:border-box!important;
+
+  border:1px solid rgba(var(--sr-red-rgb),.15)!important;
+  border-left:3px solid rgba(var(--sr-red-rgb),.62)!important;
+  border-radius:12px!important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--sr-red-rgb),.045),
+      rgba(255,255,255,.016)
+    )!important;
+
+  text-align:left!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-guillotine-copy h3{
+  margin:0 0 9px!important;
+
+  color:#ffe1e5!important;
+
+  font-size:16px!important;
+  font-weight:800!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-guillotine-copy p{
+  margin:0 0 10px!important;
+
+  color:#ddbec5!important;
+
+  font-size:12.7px!important;
+  line-height:1.70!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-guillotine-copy p:last-child{
+  margin-bottom:0!important;
+}
+
+
+/* =========================================================
+   SCENARIO ARCHIVE
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-archive-list{
+  display:flex!important;
+  flex-direction:column!important;
+
+  gap:13px!important;
+
+  max-height:720px!important;
+
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+
+  padding:3px 8px 3px 2px!important;
+
+  scrollbar-width:thin;
+  scrollbar-color:var(--sr-pink) rgba(255,255,255,.04);
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-list::-webkit-scrollbar{
+  width:7px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-list::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.035)!important;
+  border-radius:999px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-list::-webkit-scrollbar-thumb{
+  background:
+    linear-gradient(
+      180deg,
+      var(--sr-orange),
+      var(--sr-pink)
+    )!important;
+
+  border-radius:999px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-card{
+  display:grid!important;
+  grid-template-columns:205px minmax(0,1fr)!important;
+
+  gap:16px!important;
+  align-items:center!important;
+
+  min-width:0!important;
+
+  padding:13px!important;
+
+  border:1px solid rgba(255,255,255,.065)!important;
+  border-radius:14px!important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.033),
+      rgba(255,255,255,.018)
+    )!important;
+
+  transition:
+    transform .20s ease,
+    background .20s ease,
+    border-color .20s ease,
+    box-shadow .20s ease!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-card:hover{
+  transform:translateY(-2px)!important;
+
+  background:rgba(var(--sr-pink-rgb),.040)!important;
+
+  border-color:rgba(var(--sr-pink-rgb),.20)!important;
+
+  box-shadow:0 8px 20px rgba(0,0,0,.22)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-img{
+  display:block!important;
+
+  width:205px!important;
+  height:138px!important;
+
+  margin:0!important;
+
+  object-fit:cover!important;
+  object-position:center 17%!important;
+
+  border:1px solid rgba(255,255,255,.07)!important;
+  border-radius:10px!important;
+
+  background:#09070b!important;
+
+  image-rendering:auto!important;
+
+  filter:none!important;
+  transform:none!important;
+
+  transition:object-position 1.4s ease!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-card:hover .jy-archive-img,
+body:has(.jy-page.jy-seiran) .jy-archive-card:focus-within .jy-archive-img{
+  object-position:center 35%!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-content{
+  min-width:0!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-meta{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+
+  gap:7px!important;
+
+  margin:0 0 7px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-case,
+body:has(.jy-page.jy-seiran) .jy-archive-tagline{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  padding:4px 8px!important;
+
+  border-radius:999px!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:8px!important;
+  font-weight:700!important;
+  line-height:1.1!important;
+  letter-spacing:.065em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-case{
+  border:1px solid rgba(var(--sr-orange-rgb),.17)!important;
+  background:rgba(var(--sr-orange-rgb),.085)!important;
+  color:#ffd7b9!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-tagline{
+  border:1px solid rgba(var(--sr-pink-rgb),.16)!important;
+  background:rgba(var(--sr-pink-rgb),.075)!important;
+  color:#ffc2d0!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-card h4{
+  margin:0 0 6px!important;
+
+  color:#fff3f5!important;
+
+  font-size:16px!important;
+  font-weight:800!important;
+  line-height:1.2!important;
+  letter-spacing:.01em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-archive-card p{
+  margin:0!important;
+
+  color:var(--sr-text-soft)!important;
+
+  font-size:12.4px!important;
+  line-height:1.63!important;
+}
+
+
+/* =========================================================
+   CAST GALLERY — SIZE QUEEN STYLE
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-intro{
+  margin:0 0 16px!important;
+
+  color:var(--sr-muted)!important;
+
+  font-size:12px!important;
+  line-height:1.65!important;
+
+  text-align:left!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-scroll{
+  display:flex!important;
+
+  gap:14px!important;
+
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+
+  padding:4px 2px 16px!important;
+
+  -webkit-overflow-scrolling:touch;
+
+  scrollbar-width:thin;
+  scrollbar-color:var(--sr-orange) rgba(255,255,255,.05);
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-scroll::-webkit-scrollbar{
+  height:8px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-scroll::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.05)!important;
+  border-radius:999px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-scroll::-webkit-scrollbar-thumb{
+  background:
+    linear-gradient(
+      90deg,
+      var(--sr-orange),
+      var(--sr-pink),
+      var(--sr-gold)
+    )!important;
+
+  border-radius:999px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-card{
+  flex:0 0 238px!important;
+
+  overflow:hidden!important;
+
+  border:1px solid rgba(255,255,255,.07)!important;
+  border-radius:12px!important;
+
+  background:#160916!important;
+
+  box-shadow:0 10px 24px rgba(0,0,0,.28)!important;
+
+  transition:
+    transform .22s ease,
+    border-color .22s ease!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-card:hover{
+  transform:translateY(-2px)!important;
+  border-color:rgba(var(--sr-orange-rgb),.22)!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-image-wrap{
+  width:100%!important;
+  height:315px!important;
+
+  overflow:hidden!important;
+
+  background:#09070b!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-img{
+  display:block!important;
+
+  width:100%!important;
+  height:100%!important;
+
+  margin:0!important;
+
+  object-fit:cover!important;
+  object-position:center 12%!important;
+
+  image-rendering:auto!important;
+
+  border:0!important;
+  border-radius:0!important;
+
+  filter:none!important;
+  transform:none!important;
+
+  transition:object-position 1.5s ease!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-card:hover .jy-seiran-gallery-img,
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-card:focus-within .jy-seiran-gallery-img{
+  object-position:center 34%!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-body{
+  padding:11px 12px 12px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-code{
+  display:block!important;
+
+  margin:0 0 4px!important;
+
+  color:#ffbd8e!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:8px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-title{
+  margin:0 0 4px!important;
+
+  color:#f8edf1!important;
+
+  font-size:12.5px!important;
+  font-weight:700!important;
+  line-height:1.35!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-seiran-gallery-role{
+  margin:0!important;
+
+  color:var(--sr-muted)!important;
+
+  font-family:var(--sr-font-mono)!important;
+  font-size:8.3px!important;
+  line-height:1.5!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+body:has(.jy-page.jy-seiran) .jy-btn-row{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:flex-start!important;
+
+  gap:8px!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-btn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  min-height:35px!important;
+
+  padding:8px 12px!important;
+
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:9px!important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--sr-pink-rgb),.93),
+      rgba(197,47,91,.96)
+    )!important;
+
+  color:#fff!important;
+
+  font-family:var(--sr-font-body)!important;
+  font-size:11px!important;
+  font-weight:700!important;
+
+  text-decoration:none!important;
+
+  box-shadow:none!important;
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease!important;
+}
+
+body:has(.jy-page.jy-seiran) .jy-btn:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 8px 18px rgba(0,0,0,.24)!important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1024px){
+
+  body:has(.jy-page.jy-seiran) .jy-hero{
+    grid-template-columns:minmax(0,1fr) minmax(280px,.72fr)!important;
+    gap:18px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-sticky{
+    width:min(100%,380px)!important;
+    max-width:380px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-archive-card{
+    grid-template-columns:180px minmax(0,1fr)!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-archive-img{
+    width:180px!important;
+    height:126px!important;
+  }
+
+}
+
+
+/* =========================================================
+   HERO STACK
+   ========================================================= */
+
+@media(max-width:900px){
+
+  body:has(.jy-page.jy-seiran) .jy-hero{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+
+    gap:18px!important;
+
+    align-items:start!important;
+    justify-items:center!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-copy,
+  body:has(.jy-page.jy-seiran) .jy-hero-visual{
+    display:flex!important;
+
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+
+    flex:none!important;
+
+    justify-self:center!important;
+
+    box-sizing:border-box!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-copy{
+    justify-content:center!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-visual{
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-panel{
+    width:calc(100% - 32px)!important;
+    max-width:720px!important;
+
+    margin:0 auto!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-sticky{
+    width:min(92%,420px)!important;
+    max-width:420px!important;
+
+    margin:0 auto!important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:768px){
+
+  body:has(.jy-page.jy-seiran) .jy-page{
+    width:100%!important;
+    max-width:100%!important;
+
+    margin:0 auto!important;
+
+    padding-top:2px!important;
+    padding-left:0!important;
+    padding-right:0!important;
+    padding-bottom:112px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-page > .jy-section,
+  body:has(.jy-page.jy-seiran) .jy-page > .jy-row{
+    width:calc(100% - 24px)!important;
+    max-width:100%!important;
+
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero){
+    display:flex!important;
+    flex-direction:column!important;
+
+    gap:14px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero) > .jy-col-6,
+  body:has(.jy-page.jy-seiran) .jy-row:not(.jy-hero) > .jy-col-4{
+    flex:0 0 auto!important;
+
+    width:100%!important;
+    max-width:100%!important;
+
+    margin:0!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero{
+    width:100%!important;
+    max-width:100%!important;
+
+    margin:0 auto 18px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-panel{
+    width:calc(100% - 24px)!important;
+    max-width:680px!important;
+
+    padding:22px 18px!important;
+
+    border-radius:17px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-overline{
+    display:flex!important;
+
+    width:fit-content!important;
+    max-width:100%!important;
+
+    margin-left:auto!important;
+    margin-right:auto!important;
+
+    font-size:8.3px!important;
+    letter-spacing:.075em!important;
+
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-title{
+    width:100%!important;
+
+    font-size:clamp(36px,11vw,52px)!important;
+    line-height:.94!important;
+
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-subtitle{
+    width:100%!important;
+
+    font-size:8.5px!important;
+    letter-spacing:.075em!important;
+
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-blurb,
+  body:has(.jy-page.jy-seiran) .jy-quote{
+    text-align:left!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-sticky{
+    width:min(92%,390px)!important;
+    max-width:390px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-section{
+    border-radius:16px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-section-title{
+    padding:13px 12px 11px!important;
+
+    font-size:9px!important;
+    letter-spacing:.11em!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-section-body{
+    padding:16px!important;
+
+    font-size:12.8px!important;
+    line-height:1.70!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-seiran-video-badge{
+    top:8px!important;
+    left:8px!important;
+
+    font-size:7.2px!important;
+    letter-spacing:.05em!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-seiran-video-caption{
+    font-size:11.5px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-seiran-danger-badge{
+    font-size:7.4px!important;
+    letter-spacing:.05em!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-archive-list{
+    max-height:640px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-archive-card{
+    grid-template-columns:1fr!important;
+
+    gap:11px!important;
+
+    padding:12px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-archive-img{
+    width:100%!important;
+    height:auto!important;
+
+    aspect-ratio:16 / 10!important;
+
+    object-position:center 15%!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-archive-card:hover .jy-archive-img,
+  body:has(.jy-page.jy-seiran) .jy-archive-card:focus-within .jy-archive-img{
+    object-position:center 29%!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-archive-card h4{
+    font-size:15px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-archive-card p{
+    font-size:12.2px!important;
+    line-height:1.60!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-seiran-gallery-card{
+    flex-basis:218px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-seiran-gallery-image-wrap{
+    height:292px!important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media(max-width:480px){
+
+  body:has(.jy-page.jy-seiran) .jy-page > .jy-section,
+  body:has(.jy-page.jy-seiran) .jy-page > .jy-row{
+    width:calc(100% - 16px)!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-panel{
+    width:calc(100% - 16px)!important;
+    padding:20px 15px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-title{
+    font-size:clamp(34px,10.8vw,46px)!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-hero-sticky{
+    width:min(94%,360px)!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-seiran-gallery-card{
+    flex-basis:205px!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-seiran-gallery-image-wrap{
+    height:275px!important;
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH PANNING
+   ========================================================= */
+
+@keyframes jySeiranScenarioPan{
+  from{object-position:center 14%}
+  to{object-position:center 30%}
+}
+
+@keyframes jySeiranGalleryPan{
+  from{object-position:center 10%}
+  to{object-position:center 30%}
+}
+
+@media(hover:none) and (pointer:coarse){
+
+  body:has(.jy-page.jy-seiran) .jy-archive-img{
+    animation:jySeiranScenarioPan 8s ease-in-out infinite alternate!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-seiran-gallery-img{
+    animation:jySeiranGalleryPan 9s ease-in-out infinite alternate!important;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  body:has(.jy-page.jy-seiran) .jy-mini-card,
+  body:has(.jy-page.jy-seiran) .jy-archive-card,
+  body:has(.jy-page.jy-seiran) .jy-archive-img,
+  body:has(.jy-page.jy-seiran) .jy-seiran-gallery-card,
+  body:has(.jy-page.jy-seiran) .jy-seiran-gallery-img,
+  body:has(.jy-page.jy-seiran) .jy-btn{
+    transition:none!important;
+    animation:none!important;
+  }
+
+  body:has(.jy-page.jy-seiran) .jy-mini-card:hover,
+  body:has(.jy-page.jy-seiran) .jy-archive-card:hover,
+  body:has(.jy-page.jy-seiran) .jy-seiran-gallery-card:hover,
+  body:has(.jy-page.jy-seiran) .jy-btn:hover{
+    transform:none!important;
+  }
+
+}
