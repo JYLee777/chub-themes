@@ -1,0 +1,214 @@
+/* JYLEE — YUNO GASAI V1
+   Dark rose diary / psychological horror
+   Load AFTER jylee-chub-framework-v19.css.
+   Activate with <div class="jy-page jy-yuno">.
+   All skin rules are scoped; no Beatrix skin class is needed.
+*/
+
+body:has(.jy-page.jy-yuno){
+  --jy-accent:#ed82ad;
+  --jy-accent-2:#9e294d;
+  --jy-accent-3:#d9b7e5;
+  --jy-bg:#10090e;
+  --jy-panel:rgba(29,16,24,.96);
+  --jy-panel-soft:#24141e;
+  --jy-border:rgba(237,130,173,.24);
+  --jy-text:#f8e9ee;
+  --jy-text-soft:#cfbac5;
+  --jy-title:#ffeaf1;
+  --jy-radius:4px;
+  --jy-max:1160px;
+  --jy-bg-opacity:.22;
+  --jy-platform-btn:#321d2b;
+  --jy-platform-btn-hover:#4c293e;
+  --jy-platform-glass:rgba(29,16,24,.96);
+  --jy-page-overlay:linear-gradient(180deg,rgba(16,9,14,.3),rgba(16,9,14,.85));
+  background-color:var(--jy-bg)!important;
+}
+
+body:has(.jy-page.jy-yuno) .jy-bg-image{
+  opacity:var(--jy-bg-opacity)!important;
+  filter:saturate(.65) brightness(.7)!important;
+}
+
+.jy-page.jy-yuno{
+  width:100%;
+  max-width:var(--jy-max);
+  padding:24px 20px 48px;
+  font-family:'DM Sans','Segoe UI',sans-serif;
+  font-size:14px;
+  line-height:1.8;
+  color:var(--jy-text-soft);
+  overflow-wrap:anywhere;
+}
+.jy-page.jy-yuno *{min-width:0;box-sizing:border-box;}
+.jy-yuno p{margin:0 0 14px;}
+.jy-yuno p:last-child{margin-bottom:0;}
+.jy-yuno b,.jy-yuno strong{color:var(--jy-text);}
+.jy-yuno a{color:#f4a6c6;text-underline-offset:4px;}
+.jy-yuno a:hover{color:#fff0f6;}
+.jy-yuno a:focus-visible,.jy-yuno audio:focus-visible{
+  outline:2px solid #ffd1e4;outline-offset:5px;
+}
+.jy-yuno .yn-masthead{
+  display:flex;justify-content:space-between;gap:14px;
+  padding:0 0 14px;margin:0 0 22px;border-bottom:1px solid var(--jy-border);
+  color:#ddb1c6;font:10px/1.6 'Courier New',monospace;
+  text-transform:uppercase;letter-spacing:.18em;
+}
+.jy-yuno .yn-masthead span:last-child{color:#f09dbd;text-align:right;}
+.jy-yuno .yn-hero{
+  display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);
+  gap:36px;align-items:center;margin:0 0 34px;
+  padding:36px 32px;
+  border:1px solid var(--jy-border);border-top:3px solid #a73860;
+  background:radial-gradient(ellipse at 0 0,rgba(142,49,84,.18),transparent 65%),#190f17;
+  box-shadow:0 20px 65px #0005;
+}
+.jy-yuno .yn-kicker{
+  color:#f1a3c2;font:10px/1.8 'Courier New',monospace;
+  letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;
+}
+.jy-yuno .jy-title{
+  color:#ffeaf1;font:normal clamp(48px,6.8vw,84px)/.98 Georgia,serif;
+  letter-spacing:-.055em;margin:0 0 10px;text-shadow:none;
+}
+.jy-yuno .yn-handwritten{
+  color:#efa3c0;font:italic 23px/1.5 'Segoe Print','Bradley Hand',Georgia,serif;
+  margin:0 0 24px;
+}
+.jy-yuno .yn-hero-copy>p:not([class]){font-size:14px;line-height:1.9;}
+.jy-yuno .yn-pills{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0;}
+.jy-yuno .yn-pill{
+  display:inline-block;padding:5px 9px;border:1px solid #704056;
+  background:#311b29;color:#f1bed3;font:10px/1.6 'Courier New',monospace;
+}
+.jy-yuno .yn-credit{font-size:11px;margin-top:22px;}
+.jy-yuno .yn-portrait{
+  position:relative;margin:8px 0;padding:12px 12px 18px;
+  background:#e9d7d9;box-shadow:9px 12px 0 #09050866,0 14px 40px #0006;
+  transform:rotate(2deg);color:#6d364f;
+}
+.jy-yuno .yn-portrait::before{
+  content:"";position:absolute;z-index:1;top:-12px;left:35%;
+  width:32%;height:28px;background:#b68c999e;transform:rotate(-7deg);
+  border-left:1px dashed #efd8e166;border-right:1px dashed #efd8e166;
+  pointer-events:none;
+}
+.jy-yuno .yn-portrait img{
+  display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;
+  border:1px solid #966c7c55;background:#1a0a14;
+  -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);
+}
+.jy-yuno .yn-portrait figcaption{
+  padding:17px 6px 0;text-align:center;font:italic 18px/1.5 Georgia,serif;
+}
+.jy-yuno .yn-section{
+  position:relative;margin:0 0 24px;padding:28px 30px;
+  background:var(--jy-panel);border:1px solid var(--jy-border);
+  border-radius:4px;box-shadow:0 12px 32px #0003;
+}
+.jy-yuno .yn-section::before{
+  content:"";position:absolute;top:0;left:0;bottom:0;width:3px;
+  background:linear-gradient(#d96c96,#7d2a4b00);pointer-events:none;
+}
+.jy-yuno .yn-section h2{
+  margin:0 0 22px;padding:0 0 18px;border-bottom:1px solid var(--jy-border);
+  color:var(--jy-title);font:normal clamp(23px,3vw,30px)/1.25 Georgia,serif;
+  letter-spacing:-.02em;text-align:left;
+}
+.jy-yuno .yn-index{
+  display:block;color:#ed95b7;font:10px/1.6 'Courier New',monospace;
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px;
+}
+.jy-yuno .yn-subheading{
+  color:#ef9cbc;font-size:12px;font-weight:700;letter-spacing:.06em;margin:22px 0 12px;
+}
+.jy-yuno .yn-card{
+  padding:18px 20px;margin-bottom:12px;
+  border:1px solid #70405666;border-left:2px solid #d76c99;
+  background:linear-gradient(115deg,#321c29aa,#140d1399);
+}
+.jy-yuno .yn-card:last-child{margin-bottom:0;}
+.jy-yuno .yn-card-title{color:#f5ccdc;font-weight:700;margin:0 0 7px;}
+.jy-yuno .yn-card p:not(.yn-card-title){font-size:13px;line-height:1.85;}
+.jy-yuno .yn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 18px;}
+.jy-yuno .yn-grid>.yn-card{margin:0;height:100%;}
+.jy-yuno .yn-entry{display:flex;gap:16px;align-items:flex-start;margin:0 0 18px;}
+.jy-yuno .yn-entry:last-child{margin-bottom:0;}
+.jy-yuno .yn-icon{
+  display:flex;align-items:center;justify-content:center;flex:0 0 38px;
+  height:38px;border:1px solid #a34b70;background:#3b2030;font-size:17px;
+  border-radius:50%;
+}
+.jy-yuno .yn-entry>div:last-child{flex:1;}
+.jy-yuno .yn-danger{border-color:#a63e5366;}
+.jy-yuno .yn-danger::before{background:linear-gradient(#cf4f66,#77233200);}
+.jy-yuno .yn-danger .yn-pill{border-color:#8b3c4c;background:#371b24;color:#ffc0ca;}
+.jy-yuno .yn-danger .yn-card{border-left-color:#da6477;}
+.jy-yuno .yn-scenarios{counter-reset:scenario;}
+.jy-yuno .yn-scenario-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.jy-yuno .yn-scenario-card{overflow:hidden;border:1px solid #70405688;background:#21131d;box-shadow:0 8px 24px #0003;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;}
+.jy-yuno .yn-scenario-card:hover{transform:translateY(-3px);border-color:#d76c99;box-shadow:0 14px 30px #0005;}
+.jy-yuno .yn-scenario-media{height:210px;overflow:hidden;background:#120a10;}
+.jy-yuno .yn-scenario-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease,filter .35s ease;}
+.jy-yuno .yn-scenario-card:hover .yn-scenario-media img{transform:scale(1.035);filter:saturate(1.08);}
+.jy-yuno .yn-scenario-body{padding:17px 18px 20px;}
+.jy-yuno .yn-scenario-location{margin:0 0 7px;color:#e88bab;font:10px/1.5 'Courier New',monospace;letter-spacing:.16em;text-transform:uppercase;}
+.jy-yuno .yn-scenario-body h3{margin:0 0 9px;color:#ffe3ed;font:normal 23px/1.2 Georgia,serif;}
+.jy-yuno .yn-scenario-body>p:last-child{margin:0;font-size:12.5px;line-height:1.75;}
+.jy-yuno .yn-letter{
+  background:repeating-linear-gradient(transparent 0 31px,#d5779c08 31px 32px),#22141e;
+}
+.jy-yuno .yn-letter>p{font-family:Georgia,serif;font-size:16px;line-height:1.95;}
+.jy-yuno .yn-closing{
+  text-align:center;padding:24px 20px 34px;margin-top:10px;
+  border-top:1px solid var(--jy-border);
+}
+.jy-yuno .yn-closing p:first-child{font:italic clamp(23px,4vw,32px)/1.4 Georgia,serif;color:#ffdbe9;}
+.jy-yuno .yn-closing p:nth-child(2){color:#f29cbe;}
+.jy-yuno .yn-closing p:last-child{font-size:12px;}
+.jy-yuno .yn-music{
+  display:flex;align-items:center;justify-content:center;gap:24px;padding:20px;
+  margin:0 auto 22px;max-width:540px;border:1px solid var(--jy-border);background:#21131d;
+}
+.jy-yuno .yn-chibi{display:block;width:82px;height:auto;flex:0 0 82px;max-width:25%;}
+.jy-yuno .yn-music-copy{min-width:0;flex:1;}
+.jy-yuno .yn-music-label{
+  color:#eeb1cc;font:10px/1.6 'Courier New',monospace;text-transform:uppercase;letter-spacing:.15em;margin-bottom:9px;
+}
+.jy-yuno audio{display:block;width:100%;max-width:340px;height:36px;color-scheme:dark;}
+
+/* Stack before the copy or the portrait can become cramped. */
+@media(max-width:760px){
+  .jy-page.jy-yuno{padding:16px 12px 28px;}
+  .jy-yuno .yn-hero{grid-template-columns:1fr;gap:28px;padding:28px 24px;}
+  .jy-yuno .yn-portrait{width:min(100%,330px);justify-self:center;}
+  .jy-yuno .yn-portrait img{
+    object-fit:cover;object-position:top center;
+    -webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 60%,transparent 100%);
+  }
+  .jy-yuno .jy-title{font-size:clamp(48px,12vw,72px);}
+  .jy-yuno .yn-section{padding:24px 20px;}
+  .jy-yuno .yn-grid{grid-template-columns:1fr;}
+  .jy-yuno .yn-scenario-grid{grid-template-columns:1fr;}
+}
+@media(max-width:420px){
+  .jy-yuno .yn-masthead{font-size:9px;letter-spacing:.08em;}
+  .jy-yuno .yn-hero{padding:24px 18px;}
+  .jy-yuno .yn-section{padding:22px 17px;}
+  .jy-yuno .yn-card{padding:15px;}
+  .jy-yuno .yn-entry{gap:11px;}
+  .jy-yuno .yn-music{gap:12px;padding:14px;flex-wrap:wrap;}
+  .jy-yuno .yn-music-copy{flex-basis:100%;}
+  .jy-yuno .yn-chibi{margin:0 auto;}
+}
+
+/* No continuous animation; honor reduced motion for inherited effects too. */
+@media(prefers-reduced-motion:reduce){
+  .jy-page.jy-yuno *,.jy-page.jy-yuno *::before,.jy-page.jy-yuno *::after{
+    animation:none!important;transition:none!important;scroll-behavior:auto!important;
+  }
+}
