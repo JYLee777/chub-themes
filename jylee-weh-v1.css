@@ -1,0 +1,125 @@
+    font-size:7.8px;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-hero-note{
+    font-size:16px;
+    text-align:left;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-portrait-label,
+  body:has(.jy-page.jy-weh) .weh-portrait-footer{
+    font-size:7.7px;
+  }
+
+  body:has(.jy-page.jy-weh) .jy-section-title{
+    padding:14px 15px!important;
+
+    font-size:8.7px!important;
+    line-height:1.45!important;
+    letter-spacing:.13em!important;
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-weh) .jy-section-body{
+    padding:15px!important;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-status-grid,
+  body:has(.jy-page.jy-weh) .weh-estate-grid,
+  body:has(.jy-page.jy-weh) .weh-mira-grid,
+  body:has(.jy-page.jy-weh) .weh-feature-scenario,
+  body:has(.jy-page.jy-weh) .weh-scenario-grid,
+  body:has(.jy-page.jy-weh) .weh-threat-grid,
+  body:has(.jy-page.jy-weh) .weh-sandbox-grid,
+  body:has(.jy-page.jy-weh) .weh-footer-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-status-card{
+    min-height:0;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-feature-media{
+    min-height:0;
+    aspect-ratio:16/10;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-feature-copy{
+    padding:5px 2px 2px;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-feature-copy h3{
+    font-size:30px;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-scenario-card:last-child{
+    grid-column:auto;
+    width:100%;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-card-body{
+    min-height:0;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-intel-line{
+    grid-template-columns:1fr;
+    gap:6px;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-intel-line b{
+    justify-self:start;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-sandbox-grid{
+    gap:8px;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-sandbox-grid > div{
+    display:grid;
+    grid-template-columns:34px 1fr;
+    gap:7px;
+    align-items:start;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-sandbox-grid span{
+    margin:2px 0 0;
+  }
+
+}
+
+/* =========================================================
+   TOUCH DEVICES — SUBTLE IMAGE PAN
+   ========================================================= */
+
+@keyframes wehScenarioPan{
+  from{object-position:center 14%}
+  to{object-position:center 30%}
+}
+
+@media(hover:none) and (pointer:coarse){
+
+  body:has(.jy-page.jy-weh) .weh-feature-media img,
+  body:has(.jy-page.jy-weh) .weh-card-media img{
+    animation:wehScenarioPan 9s ease-in-out infinite alternate!important;
+  }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  body:has(.jy-page.jy-weh) .weh-feature-media img,
+  body:has(.jy-page.jy-weh) .weh-card-media img,
+  body:has(.jy-page.jy-weh) .weh-scenario-card{
+    animation:none!important;
+    transition:none!important;
+  }
+
+  body:has(.jy-page.jy-weh) .weh-scenario-card:hover{
+    transform:none!important;
+  }
+
+}
