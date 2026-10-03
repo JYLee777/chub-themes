@@ -1,0 +1,2261 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+/* =========================================================
+   JYLEE — JEANNE / FIVE SILVER V7
+   Theme: Medieval field journal / quiet war aftermath
+   Requires: jylee-chub-framework-v19.css
+   Activate with: <div class="jy-page jy-jeanne jeanne-page">
+   ========================================================= */
+
+
+/* =========================================================
+   TOKENS
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne){
+  --jn-ivory:#f3eee1;
+  --jn-ivory-rgb:243,238,225;
+
+  --jn-silver:#c8d1ca;
+  --jn-silver-rgb:200,209,202;
+
+  --jn-blue:#a8c9d3;
+  --jn-blue-rgb:168,201,211;
+
+  --jn-sage:#9eaf95;
+  --jn-sage-rgb:158,175,149;
+
+  --jn-warm:#d8c39b;
+  --jn-warm-rgb:216,195,155;
+
+  --jn-rust:#a46f5f;
+  --jn-rust-rgb:164,111,95;
+
+  --jn-deep:#08110e;
+  --jn-deep-2:#0d1712;
+
+  --jn-panel:rgba(10,19,15,.86);
+  --jn-panel-soft:rgba(17,28,22,.76);
+  --jn-card:rgba(17,28,22,.88);
+
+  --jn-line:rgba(200,209,202,.16);
+  --jn-line-strong:rgba(200,209,202,.28);
+
+  --jn-text:#eef0e7;
+  --jn-text-soft:#c1c9bd;
+  --jn-muted:#8f9c90;
+
+  --jn-shadow:0 18px 45px rgba(0,0,0,.38);
+
+  --jn-font-display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --jn-font-body:'DM Sans','Segoe UI',system-ui,sans-serif;
+  --jn-font-mono:'IBM Plex Mono','Consolas',monospace;
+
+  --jy-accent:var(--jn-sage);
+  --jy-accent-2:var(--jn-blue);
+  --jy-accent-3:var(--jn-warm);
+
+  --jy-bg:var(--jn-deep);
+  --jy-panel:var(--jn-panel);
+  --jy-panel-soft:var(--jn-panel-soft);
+  --jy-border:var(--jn-line);
+
+  --jy-text:var(--jn-text);
+  --jy-text-soft:var(--jn-text-soft);
+  --jy-title:var(--jn-ivory);
+
+  --jy-shadow:var(--jn-shadow);
+
+  --jy-font-body:var(--jn-font-body);
+  --jy-font-display:var(--jn-font-display);
+}
+
+
+/* =========================================================
+   NATIVE CHUB CLEANUP
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne)
+.ant-col-lg-18 > div.mt-2 > .msg-mkdn-container > p > strong{
+  display:none!important;
+}
+
+body:has(.jy-page.jy-jeanne)
+.ant-col-lg-18 > div.mt-2 > .msg-mkdn-container > p:has(> strong:only-child){
+  margin:0!important;
+  padding:0!important;
+  min-height:0!important;
+  line-height:0!important;
+}
+
+body:has(.jy-page.jy-jeanne) div.mt-2>.font-size-message{
+  display:none!important;
+}
+
+
+/* =========================================================
+   BACKGROUND / ATMOSPHERE
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne){
+  background:var(--jn-deep)!important;
+  color:var(--jn-text)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jy-bg-image.jn-background{
+  position:fixed!important;
+  inset:0!important;
+
+  width:100vw!important;
+  height:100vh!important;
+  max-width:none!important;
+
+  margin:0!important;
+  padding:0!important;
+
+  object-fit:cover!important;
+  object-position:center 42%!important;
+
+  opacity:var(--jy-bg-opacity,.54)!important;
+
+  filter:
+    saturate(.77)
+    contrast(1.07)
+    brightness(.70)!important;
+
+  z-index:0!important;
+  pointer-events:none!important;
+}
+
+body:has(.jy-page.jy-jeanne)::before{
+  content:"";
+
+  position:fixed;
+  inset:0;
+  z-index:0;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5,11,8,.18) 0%,
+      rgba(6,13,10,.28) 42%,
+      rgba(5,10,8,.66) 100%
+    ),
+    radial-gradient(
+      circle at 78% 16%,
+      rgba(var(--jn-blue-rgb),.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 17% 78%,
+      rgba(var(--jn-rust-rgb),.09),
+      transparent 31%
+    );
+}
+
+body:has(.jy-page.jy-jeanne)::after{
+  content:"";
+
+  position:fixed;
+  inset:0;
+  z-index:0;
+
+  pointer-events:none;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);
+
+  background-size:52px 52px;
+  opacity:.20;
+}
+
+
+/* =========================================================
+   PAGE / GLOBAL TYPE
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jy-page.jeanne-page{
+  position:relative!important;
+  z-index:2!important;
+
+  isolation:isolate!important;
+
+  width:100%!important;
+  max-width:1380px!important;
+
+  margin:0 auto!important;
+  padding:8px 20px 38px!important;
+
+  color:var(--jn-text)!important;
+  background:transparent!important;
+
+  border:0!important;
+  box-shadow:none!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:14px!important;
+  line-height:1.72!important;
+
+  text-align:left!important;
+
+  overflow:visible!important;
+  overflow-wrap:anywhere!important;
+
+  box-sizing:border-box!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jeanne-page,
+body:has(.jy-page.jy-jeanne) .jeanne-page *{
+  box-sizing:border-box!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jeanne-page::before{
+  display:none!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-content{
+  position:relative!important;
+  z-index:2!important;
+
+  width:100%!important;
+  max-width:1180px!important;
+
+  margin:0 auto!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jeanne-page p,
+body:has(.jy-page.jy-jeanne) .jeanne-page h1,
+body:has(.jy-page.jy-jeanne) .jeanne-page h2,
+body:has(.jy-page.jy-jeanne) .jeanne-page h3,
+body:has(.jy-page.jy-jeanne) .jeanne-page figure,
+body:has(.jy-page.jy-jeanne) .jeanne-page blockquote{
+  margin-top:0;
+}
+
+body:has(.jy-page.jy-jeanne) .jeanne-page a{
+  color:var(--jn-silver)!important;
+  text-underline-offset:4px!important;
+
+  transition:
+    color .22s ease,
+    border-color .22s ease,
+    background-color .22s ease,
+    transform .22s ease!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jeanne-page a:hover{
+  color:#fff7e5!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jeanne-page a:focus-visible,
+body:has(.jy-page.jy-jeanne) .jeanne-page summary:focus-visible,
+body:has(.jy-page.jy-jeanne) .jeanne-page audio:focus-visible{
+  outline:2px solid var(--jn-blue)!important;
+  outline-offset:5px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jeanne-page h1,
+body:has(.jy-page.jy-jeanne) .jeanne-page h2,
+body:has(.jy-page.jy-jeanne) .jeanne-page h3{
+  font-family:var(--jn-font-display)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-eyebrow{
+  margin:0 0 9px!important;
+
+  color:#b7c5bb!important;
+
+  font-family:var(--jn-font-mono)!important;
+  font-size:8.5px!important;
+  font-weight:600!important;
+  line-height:1.5!important;
+
+  letter-spacing:.18em!important;
+  text-transform:uppercase!important;
+}
+
+
+/* =========================================================
+   MASTHEAD
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-masthead{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+
+  gap:18px!important;
+
+  width:100%!important;
+
+  margin:0 0 14px!important;
+  padding:10px 3px 12px!important;
+
+  border-bottom:1px solid rgba(var(--jn-silver-rgb),.16)!important;
+
+  color:#9fa99f!important;
+
+  font-family:var(--jn-font-mono)!important;
+  font-size:8px!important;
+  font-weight:500!important;
+  line-height:1.4!important;
+
+  letter-spacing:.18em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-masthead::before{
+  content:"";
+
+  width:32px;
+  height:1px;
+
+  background:linear-gradient(
+    90deg,
+    var(--jn-warm),
+    transparent
+  );
+
+  opacity:.65;
+}
+
+
+/* =========================================================
+   HERO — STORYBOOK SPREAD
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-hero{
+  position:relative!important;
+
+  display:grid!important;
+  grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr)!important;
+
+  gap:34px!important;
+  align-items:center!important;
+
+  width:100%!important;
+  min-height:560px!important;
+
+  margin:0 0 20px!important;
+  padding:28px 26px 22px!important;
+
+  overflow:hidden!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.11)!important;
+  border-radius:22px!important;
+
+  background:
+    linear-gradient(
+      105deg,
+      rgba(7,14,10,.84) 0%,
+      rgba(8,16,12,.70) 51%,
+      rgba(8,16,12,.30) 76%,
+      rgba(8,16,12,.12) 100%
+    )!important;
+
+  box-shadow:
+    0 18px 48px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.02)!important;
+
+  -webkit-backdrop-filter:blur(2px)!important;
+  backdrop-filter:blur(2px)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-hero::before{
+  content:"";
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+
+  height:2px;
+
+  background:linear-gradient(
+    90deg,
+    rgba(var(--jn-warm-rgb),.82),
+    rgba(var(--jn-blue-rgb),.48),
+    transparent 74%
+  );
+
+  opacity:.82;
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-hero::after{
+  content:"";
+
+  position:absolute;
+  right:-90px;
+  top:-95px;
+
+  width:340px;
+  height:340px;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.05);
+  border-radius:50%;
+
+  box-shadow:
+    0 0 0 44px rgba(var(--jn-blue-rgb),.018),
+    0 0 0 88px rgba(var(--jn-warm-rgb),.012);
+
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-hero-copy{
+  position:relative!important;
+  z-index:2!important;
+
+  min-width:0!important;
+
+  padding:18px 0 18px 4px!important;
+}
+
+body:has(.jy-page.jy-jeanne) #jn-title{
+  margin:0 0 5px!important;
+
+  color:var(--jn-ivory)!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:clamp(68px,7.2vw,104px)!important;
+  font-weight:600!important;
+  line-height:.84!important;
+
+  letter-spacing:-.045em!important;
+
+  text-shadow:
+    0 4px 20px rgba(0,0,0,.44),
+    0 0 30px rgba(var(--jn-warm-rgb),.045)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-subtitle{
+  margin:0!important;
+
+  color:#bdd2d7!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:20px!important;
+  font-style:italic!important;
+  font-weight:500!important;
+  line-height:1.5!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-coins{
+  display:flex!important;
+  align-items:center!important;
+
+  gap:8px!important;
+
+  margin:22px 0 22px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-coins::after{
+  content:"";
+
+  width:76px;
+  height:1px;
+
+  margin-left:8px;
+
+  background:linear-gradient(
+    90deg,
+    rgba(var(--jn-silver-rgb),.34),
+    transparent
+  );
+}
+
+body:has(.jy-page.jy-jeanne) .jn-coins span{
+  display:block!important;
+
+  width:14px!important;
+  height:14px!important;
+
+  border:1px solid rgba(220,226,218,.66)!important;
+  border-radius:50%!important;
+
+  outline:1px solid rgba(129,145,124,.22)!important;
+  outline-offset:2px!important;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #e3e7df 0%,
+      #9aa497 56%,
+      #5d6b5a 100%
+    )!important;
+
+  box-shadow:
+    inset 0 0 0 2px rgba(70,84,68,.74),
+    0 2px 5px rgba(0,0,0,.42)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-intro{
+  margin:0!important;
+
+  color:#f2eee2!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:25px!important;
+  font-weight:600!important;
+  line-height:1.34!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-hero-copy > p:not([class]){
+  max-width:48ch!important;
+
+  margin:13px 0 0!important;
+
+  color:#c7cec3!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:13.5px!important;
+  line-height:1.78!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-last-line{
+  margin:16px 0 0!important;
+
+  color:var(--jn-warm)!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:18px!important;
+  font-style:italic!important;
+  line-height:1.5!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-traits{
+  display:flex!important;
+  flex-wrap:wrap!important;
+
+  gap:7px!important;
+
+  margin:19px 0 18px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-traits span{
+  padding:6px 9px!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.11)!important;
+  border-radius:999px!important;
+
+  background:rgba(var(--jn-silver-rgb),.035)!important;
+
+  color:#aeb9ad!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:9px!important;
+  font-weight:500!important;
+  line-height:1.25!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-text-link{
+  display:inline-flex!important;
+  align-items:center!important;
+
+  gap:15px!important;
+
+  padding:8px 0!important;
+
+  border-bottom:1px solid rgba(var(--jn-silver-rgb),.30)!important;
+
+  color:#d6ded5!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:10.5px!important;
+  font-weight:500!important;
+  line-height:1.5!important;
+
+  text-decoration:none!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-text-link:hover{
+  transform:translateX(3px)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-portrait{
+  position:relative!important;
+  z-index:2!important;
+
+  align-self:end!important;
+  min-width:0!important;
+
+  margin:0!important;
+  padding:0!important;
+
+  overflow:visible!important;
+
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-portrait::before{
+  content:"";
+
+  position:absolute;
+  left:15%;
+  right:8%;
+  bottom:7%;
+
+  height:42%;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(var(--jn-blue-rgb),.11),
+      transparent 68%
+    );
+
+  filter:blur(12px);
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-portrait img{
+  position:relative!important;
+  z-index:2!important;
+
+  display:block!important;
+
+  width:100%!important;
+  height:auto!important;
+  max-height:710px!important;
+
+  margin:0 auto!important;
+
+  object-fit:contain!important;
+  object-position:center top!important;
+
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+
+  /* Deliberately mirrors the simple working portrait fade used
+     by the Yuno reference: direct mask on the IMG, no wrapper
+     mask, no overlay, no drop-shadow/filter compositing. */
+  -webkit-mask-image:linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 68%,
+    transparent 100%
+  )!important;
+
+  mask-image:linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 68%,
+    transparent 100%
+  )!important;
+
+  -webkit-mask-repeat:no-repeat!important;
+  mask-repeat:no-repeat!important;
+
+  -webkit-mask-size:100% 100%!important;
+  mask-size:100% 100%!important;
+
+  filter:none!important;
+
+  /* Let the fully-faded tail disappear slightly below the hero,
+     preventing the image's physical bottom edge from being visible. */
+  transform:translateY(18px)!important;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-section-heading{
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:space-between!important;
+
+  gap:18px!important;
+
+  margin:0 0 21px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-section-heading .jn-eyebrow{
+  margin-bottom:4px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-section-heading h2{
+  margin:0!important;
+
+  color:#f0ede1!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:clamp(29px,3.1vw,39px)!important;
+  font-weight:600!important;
+  line-height:1.05!important;
+
+  letter-spacing:-.025em!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-section-mark{
+  padding-bottom:4px!important;
+
+  color:#98a397!important;
+
+  font-family:var(--jn-font-mono)!important;
+  font-size:9px!important;
+  line-height:1.5!important;
+
+  letter-spacing:.14em!important;
+  white-space:nowrap!important;
+}
+
+
+/* =========================================================
+   GREETINGS / SCENARIOS
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-greetings{
+  position:relative!important;
+
+  margin:0 0 20px!important;
+  padding:28px 0 9px!important;
+
+  border-top:1px solid rgba(var(--jn-silver-rgb),.14)!important;
+
+  scroll-margin-top:24px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-greetings::before{
+  content:"";
+
+  position:absolute;
+  top:-1px;
+  left:0;
+
+  width:120px;
+  height:1px;
+
+  background:linear-gradient(
+    90deg,
+    var(--jn-warm),
+    transparent
+  );
+
+  opacity:.72;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scenario{
+  position:relative!important;
+
+  min-width:0!important;
+
+  overflow:hidden!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.13)!important;
+  border-radius:14px!important;
+
+  background:
+    linear-gradient(
+      150deg,
+      rgba(16,27,21,.93),
+      rgba(7,14,11,.96)
+    )!important;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.27),
+    inset 0 1px 0 rgba(255,255,255,.018)!important;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scenario:hover{
+  transform:translateY(-4px)!important;
+
+  border-color:rgba(var(--jn-silver-rgb),.28)!important;
+
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.35),
+    0 0 22px rgba(var(--jn-blue-rgb),.035)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scene-image{
+  position:relative!important;
+
+  min-width:0!important;
+
+  overflow:hidden!important;
+
+  background:#101a15!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scene-image::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+  z-index:2;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(5,11,8,.58),
+      transparent 48%
+    );
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scene-image img{
+  display:block!important;
+
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+
+  margin:0!important;
+
+  object-fit:cover!important;
+  object-position:center 28%!important;
+
+  border:0!important;
+  border-radius:0!important;
+
+  transform:none!important;
+
+  filter:
+    brightness(.90)
+    saturate(.82)
+    contrast(1.02)!important;
+
+  transition:
+    filter .35s ease,
+    object-position 1.35s ease!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scenario:hover .jn-scene-image img{
+  transform:none!important;
+
+  object-position:center 36%!important;
+
+  filter:
+    brightness(1.01)
+    saturate(.96)
+    contrast(1.02)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-number{
+  position:absolute!important;
+  top:12px!important;
+  left:12px!important;
+  z-index:4!important;
+
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  width:32px!important;
+  height:32px!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.38)!important;
+  border-radius:50%!important;
+
+  background:rgba(8,17,13,.90)!important;
+
+  color:#ecece2!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:14px!important;
+  font-weight:600!important;
+
+  box-shadow:0 5px 15px rgba(0,0,0,.34)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scene-copy{
+  padding:19px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scene-copy .jn-eyebrow{
+  margin-bottom:5px!important;
+  font-size:7.8px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scene-copy h3{
+  margin:0!important;
+
+  color:#f2eee1!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:24px!important;
+  font-weight:600!important;
+  line-height:1.08!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scene-copy > p:not([class]){
+  margin:10px 0 0!important;
+
+  color:#b9c3b8!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:11.5px!important;
+  line-height:1.68!important;
+}
+
+
+/* FEATURED CHAPTER */
+
+body:has(.jy-page.jy-jeanne) .jn-featured{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.22fr) minmax(300px,.78fr)!important;
+
+  gap:0!important;
+
+  margin:0 0 14px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-featured .jn-scene-image{
+  min-height:390px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-featured .jn-scene-image img{
+  position:absolute!important;
+  inset:0!important;
+
+  aspect-ratio:auto!important;
+
+  object-position:center 32%!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-featured:hover .jn-scene-image img{
+  object-position:center 40%!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-featured .jn-scene-copy{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+
+  padding:31px!important;
+
+  border-left:1px solid rgba(var(--jn-silver-rgb),.09)!important;
+
+  background:
+    radial-gradient(
+      circle at 90% 12%,
+      rgba(var(--jn-blue-rgb),.055),
+      transparent 34%
+    )!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-featured h3{
+  font-size:36px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-featured blockquote{
+  margin:20px 0 0!important;
+  padding:10px 0 10px 16px!important;
+
+  border-left:2px solid rgba(var(--jn-warm-rgb),.50)!important;
+
+  color:#decba7!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:19px!important;
+  font-style:italic!important;
+  line-height:1.45!important;
+}
+
+
+/* CHAPTER SHELF */
+
+body:has(.jy-page.jy-jeanne) .jn-scenario-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+
+  gap:12px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scenario-grid .jn-scene-image{
+  aspect-ratio:16/10!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scenario-grid .jn-scene-image img{
+  aspect-ratio:auto!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-scenario-grid .jn-scene-copy{
+  min-height:170px!important;
+}
+
+
+/* =========================================================
+   MUSIC — FIVE SILVER INTERLUDE
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-music{
+  position:relative!important;
+
+  display:grid!important;
+  grid-template-columns:auto minmax(0,.72fr) minmax(280px,1.28fr)!important;
+
+  align-items:center!important;
+
+  gap:21px!important;
+
+  margin:18px 0 20px!important;
+  padding:20px 22px!important;
+
+  overflow:hidden!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.14)!important;
+  border-left:3px solid rgba(var(--jn-warm-rgb),.58)!important;
+  border-radius:13px!important;
+
+  background:
+    linear-gradient(
+      105deg,
+      rgba(31,43,32,.91),
+      rgba(13,24,17,.91) 46%,
+      rgba(9,17,13,.94)
+    )!important;
+
+  box-shadow:0 13px 30px rgba(0,0,0,.27)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-music::after{
+  content:"";
+
+  position:absolute;
+  right:-45px;
+  top:-60px;
+
+  width:190px;
+  height:190px;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.045);
+  border-radius:50%;
+
+  box-shadow:
+    0 0 0 24px rgba(var(--jn-blue-rgb),.018),
+    0 0 0 48px rgba(var(--jn-warm-rgb),.012);
+
+  pointer-events:none;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-record{
+  position:relative;
+  z-index:2;
+
+  display:grid!important;
+  place-items:center!important;
+
+  width:62px!important;
+  height:62px!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.25)!important;
+  border-radius:50%!important;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      #2b352e 0 2px,
+      #111914 3px 5px
+    )!important;
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.36),
+    inset 0 0 0 1px rgba(255,255,255,.025)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-record span{
+  display:grid!important;
+  place-items:center!important;
+
+  width:27px!important;
+  height:27px!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.52)!important;
+  border-radius:50%!important;
+
+  background:#a6b39f!important;
+
+  color:#263227!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:14px!important;
+  font-weight:700!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-music-copy{
+  position:relative;
+  z-index:2;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-music .jn-eyebrow{
+  margin-bottom:3px!important;
+  font-size:7.7px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-music h2{
+  margin:0!important;
+
+  color:#f0ecdf!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:27px!important;
+  font-weight:600!important;
+  line-height:1.05!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-music-copy > p:last-child{
+  margin:5px 0 0!important;
+
+  color:#9da99d!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:14px!important;
+  font-style:italic!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-player{
+  position:relative;
+  z-index:2;
+
+  min-width:0!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-player audio{
+  display:block!important;
+
+  width:100%!important;
+  max-width:100%!important;
+  height:38px!important;
+
+  color-scheme:dark!important;
+
+  filter:saturate(.74) brightness(.92)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-player a{
+  display:block!important;
+
+  margin-top:6px!important;
+
+  color:#94a194!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:9px!important;
+  line-height:1.5!important;
+
+  text-align:right!important;
+}
+
+
+/* =========================================================
+   CREATOR NOTES / CREDITS
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-notes{
+  position:relative!important;
+
+  margin:0 0 14px!important;
+  padding:23px 24px 24px!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.12)!important;
+  border-radius:14px!important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15,25,20,.84),
+      rgba(8,16,12,.88)
+    )!important;
+
+  box-shadow:0 12px 28px rgba(0,0,0,.23)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-notes .jn-section-heading{
+  margin-bottom:13px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-credit-copy{
+  max-width:88ch!important;
+
+  color:#aeb9ad!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:11.5px!important;
+  line-height:1.72!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-credit-copy p{
+  margin:0!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-credit-copy p+p{
+  margin-top:9px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-original-link{
+  display:inline-flex!important;
+  align-items:center!important;
+
+  gap:18px!important;
+
+  margin-top:16px!important;
+  padding:9px 13px!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.15)!important;
+  border-radius:7px!important;
+
+  background:rgba(var(--jn-sage-rgb),.045)!important;
+
+  color:#d2dbd0!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:10px!important;
+  font-weight:500!important;
+  line-height:1.45!important;
+
+  text-decoration:none!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-original-link:hover{
+  transform:translateY(-2px)!important;
+
+  border-color:rgba(var(--jn-silver-rgb),.34)!important;
+  background:rgba(var(--jn-sage-rgb),.08)!important;
+}
+
+
+/* =========================================================
+   CHANGELOG
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-changelog{
+  margin:0 0 14px!important;
+
+  overflow:hidden!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.12)!important;
+  border-radius:12px!important;
+
+  background:rgba(12,22,16,.84)!important;
+
+  box-shadow:0 10px 24px rgba(0,0,0,.21)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-changelog summary{
+  cursor:pointer!important;
+
+  list-style:none!important;
+
+  display:flex!important;
+  align-items:center!important;
+
+  gap:15px!important;
+
+  padding:13px 17px!important;
+
+  color:#dfe4da!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:18px!important;
+  font-weight:600!important;
+  line-height:1.4!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-changelog summary::-webkit-details-marker{
+  display:none!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-change-label{
+  margin-left:auto!important;
+
+  color:#8f9b8f!important;
+
+  font-family:var(--jn-font-mono)!important;
+  font-size:7.8px!important;
+  line-height:1.4!important;
+
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-disclosure{
+  display:block!important;
+
+  width:22px!important;
+
+  color:#bfc9bf!important;
+
+  text-align:center!important;
+
+  transition:transform .22s ease!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-changelog[open] .jn-disclosure{
+  transform:rotate(45deg)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-changelog-body{
+  padding:0 18px 17px!important;
+
+  border-top:1px solid rgba(var(--jn-silver-rgb),.07)!important;
+
+  color:#9eaa9e!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:10.5px!important;
+  line-height:1.72!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-changelog-body h3{
+  margin:14px 0 4px!important;
+
+  color:#c9d2c8!important;
+
+  font-family:var(--jn-font-mono)!important;
+  font-size:8px!important;
+  font-weight:600!important;
+  line-height:1.5!important;
+
+  letter-spacing:.10em!important;
+  text-transform:uppercase!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-changelog-body ul{
+  margin:6px 0 0!important;
+  padding-left:17px!important;
+}
+
+
+/* =========================================================
+   SHOUTOUTS
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-shoutouts{
+  margin:0 0 14px!important;
+  padding:22px 24px 24px!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.12)!important;
+  border-radius:14px!important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13,23,18,.86),
+      rgba(7,14,11,.90)
+    )!important;
+
+  box-shadow:0 11px 27px rgba(0,0,0,.22)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-shoutouts h2{
+  margin:0!important;
+
+  color:#eeeadf!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:29px!important;
+  font-weight:600!important;
+  line-height:1.1!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-shoutouts > p:not([class]){
+  max-width:72ch!important;
+
+  margin:10px 0 16px!important;
+
+  color:#9faca0!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:11px!important;
+  line-height:1.68!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-creator-links{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+
+  gap:7px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-creator-links a{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+
+  gap:12px!important;
+
+  min-width:0!important;
+
+  padding:9px 11px!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.12)!important;
+  border-radius:7px!important;
+
+  background:rgba(var(--jn-sage-rgb),.035)!important;
+
+  color:#cbd4ca!important;
+
+  font-family:var(--jn-font-body)!important;
+  font-size:9.5px!important;
+  font-weight:500!important;
+  line-height:1.3!important;
+
+  text-decoration:none!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-creator-links a span{
+  flex:0 0 auto!important;
+
+  color:#839383!important;
+
+  font-family:var(--jn-font-mono)!important;
+  font-size:8px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-creator-links a:hover{
+  transform:translateY(-2px)!important;
+
+  border-color:rgba(var(--jn-warm-rgb),.26)!important;
+
+  background:rgba(var(--jn-warm-rgb),.05)!important;
+}
+
+
+/* =========================================================
+   CLOSING COLOPHON
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) .jn-closing{
+  position:relative!important;
+
+  padding:4px 0 22px!important;
+
+  border-top:1px solid rgba(var(--jn-silver-rgb),.13)!important;
+
+  text-align:center!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-closing .jn-coins{
+  justify-content:center!important;
+
+  margin:18px 0 12px!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-closing .jn-coins::after{
+  display:none!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-closing p{
+  margin:0!important;
+
+  color:#d5c29f!important;
+
+  font-family:var(--jn-font-display)!important;
+  font-size:19px!important;
+  font-style:italic!important;
+  font-weight:500!important;
+  line-height:1.45!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-closing > span{
+  display:block!important;
+
+  margin-top:8px!important;
+
+  color:#849184!important;
+
+  font-family:var(--jn-font-mono)!important;
+  font-size:7.5px!important;
+  line-height:1.45!important;
+
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+}
+
+
+/* =========================================================
+   CHUB NATIVE UI TINTS
+   Framework V19 handles the takeover/action dock; these rules
+   only give Jeanne's page its own visual language.
+   ========================================================= */
+
+body:has(.jy-page.jy-jeanne) :is(
+  .ant-layout,
+  .ant-layout-content,
+  .ant-layout-footer
+){
+  background:transparent!important;
+}
+
+body:has(.jy-page.jy-jeanne) .ant-collapse{
+  overflow:hidden!important;
+
+  border:1px solid rgba(var(--jn-silver-rgb),.12)!important;
+  border-radius:14px!important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13,23,18,.94),
+      rgba(7,14,11,.96)
+    )!important;
+}
+
+body:has(.jy-page.jy-jeanne) .ant-collapse > .ant-collapse-item{
+  border-color:rgba(var(--jn-silver-rgb),.08)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .ant-collapse-header{
+  color:#e8ece3!important;
+
+  font-family:var(--jn-font-body)!important;
+}
+
+body:has(.jy-page.jy-jeanne) .ant-collapse-content{
+  border-color:rgba(var(--jn-silver-rgb),.08)!important;
+
+  background:rgba(10,18,14,.92)!important;
+
+  color:#d5ddd2!important;
+}
+
+body:has(.jy-page.jy-jeanne) .ant-tag{
+  border-color:rgba(var(--jn-silver-rgb),.14)!important;
+
+  background:rgba(var(--jn-sage-rgb),.06)!important;
+
+  color:#d1d9ce!important;
+}
+
+body:has(.jy-page.jy-jeanne)
+div.mt-4:has(svg.lucide-messages-square) button.ant-btn{
+  border-color:rgba(var(--jn-silver-rgb),.18)!important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14,25,19,.97),
+      rgba(8,16,12,.98)
+    )!important;
+
+  color:#e8ede5!important;
+}
+
+body:has(.jy-page.jy-jeanne)
+div.mt-4:has(svg.lucide-messages-square)
+> button.ant-btn:has(svg.lucide-messages-square){
+  border-color:rgba(var(--jn-sage-rgb),.30)!important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #425a43,
+      #607267 54%,
+      #8a8069
+    )!important;
+
+  color:#fff!important;
+}
+
+body:has(.jy-page.jy-jeanne)
+div.mt-4.text-right.justify-end button.ant-btn:has(.anticon-star){
+  border-color:rgba(var(--jn-warm-rgb),.26)!important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1b271e,
+      #121b15
+    )!important;
+
+  color:#e4d3ad!important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1024px){
+
+  body:has(.jy-page.jy-jeanne) .jn-content{
+    max-width:1040px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-hero{
+    grid-template-columns:minmax(0,1.06fr) minmax(300px,.94fr)!important;
+
+    gap:22px!important;
+
+    min-height:510px!important;
+
+    padding:24px 22px 19px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) #jn-title{
+    font-size:clamp(64px,8vw,88px)!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-featured{
+    grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr)!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-featured .jn-scene-image{
+    min-height:350px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-scenario-grid{
+    gap:10px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-scene-copy{
+    padding:16px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-creator-links{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:768px){
+
+  body:has(.jy-page.jy-jeanne) .jy-page.jeanne-page{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+
+    margin:0 auto!important;
+    padding:5px 10px 34px!important;
+
+    overflow-x:clip!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-content{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+
+    margin:0!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-masthead{
+    gap:10px!important;
+
+    margin-bottom:10px!important;
+    padding:8px 2px 10px!important;
+
+    font-size:7px!important;
+    letter-spacing:.11em!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-masthead::before{
+    width:18px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-hero{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+
+    gap:14px!important;
+
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+
+    margin:0 0 14px!important;
+    padding:19px 16px 13px!important;
+
+    border-radius:18px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-hero-copy{
+    order:1!important;
+
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+
+    padding:4px 0 0!important;
+
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-hero-copy .jn-eyebrow{
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) #jn-title{
+    width:100%!important;
+    max-width:100%!important;
+
+    margin-bottom:6px!important;
+
+    font-size:clamp(62px,18vw,82px)!important;
+    line-height:.84!important;
+
+    text-align:center!important;
+
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-subtitle{
+    font-size:17px!important;
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-coins{
+    justify-content:center!important;
+
+    margin:18px 0!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-coins::after{
+    display:none!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-intro{
+    font-size:22px!important;
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-hero-copy > p:not([class]){
+    max-width:48ch!important;
+
+    margin-left:auto!important;
+    margin-right:auto!important;
+
+    font-size:12.5px!important;
+    line-height:1.72!important;
+
+    text-align:left!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-last-line{
+    font-size:17px!important;
+    text-align:center!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-traits{
+    justify-content:center!important;
+
+    margin:17px 0 14px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-text-link{
+    justify-content:center!important;
+
+    margin:0 auto!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-portrait{
+    order:2!important;
+
+    width:min(100%,390px)!important;
+    max-width:100%!important;
+    min-width:0!important;
+
+    margin:0 auto!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-portrait img{
+    width:100%!important;
+    max-height:430px!important;
+
+    object-position:center top!important;
+
+    -webkit-mask-image:linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 72%,
+      transparent 100%
+    )!important;
+
+    mask-image:linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 72%,
+      transparent 100%
+    )!important;
+
+    transform:none!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-section-heading{
+    align-items:flex-end!important;
+
+    gap:10px!important;
+
+    margin-bottom:16px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-section-heading h2{
+    font-size:30px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-section-mark{
+    display:none!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-greetings{
+    padding-top:22px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-featured{
+    grid-template-columns:minmax(0,1fr)!important;
+
+    width:100%!important;
+    max-width:100%!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-featured .jn-scene-image{
+    min-height:0!important;
+
+    aspect-ratio:16/11!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-featured .jn-scene-image img{
+    position:absolute!important;
+    inset:0!important;
+
+    width:100%!important;
+    height:100%!important;
+
+    object-position:center 30%!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-featured .jn-scene-copy{
+    padding:20px!important;
+
+    border-left:0!important;
+    border-top:1px solid rgba(var(--jn-silver-rgb),.08)!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-featured h3{
+    font-size:31px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-scenario-grid{
+    grid-template-columns:minmax(0,1fr)!important;
+
+    gap:11px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-scenario-grid .jn-scene-image{
+    aspect-ratio:16/10!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-scenario-grid .jn-scene-copy{
+    min-height:0!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-scene-copy{
+    padding:17px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-scene-copy h3{
+    font-size:25px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-music{
+    grid-template-columns:auto minmax(0,1fr)!important;
+
+    gap:14px!important;
+
+    padding:17px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-record{
+    width:56px!important;
+    height:56px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-player{
+    grid-column:1/-1!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-notes,
+  body:has(.jy-page.jy-jeanne) .jn-shoutouts{
+    padding:18px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-credit-copy{
+    font-size:11.25px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-creator-links{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-creator-links a{
+    font-size:9px!important;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media(max-width:390px){
+
+  body:has(.jy-page.jy-jeanne) .jy-page.jeanne-page{
+    padding-left:8px!important;
+    padding-right:8px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) #jn-title{
+    font-size:58px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-subtitle{
+    font-size:16px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-hero{
+    padding-left:13px!important;
+    padding-right:13px!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-change-label{
+    display:none!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-creator-links{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+}
+
+
+/* =========================================================
+   TOUCH IMAGE PAN
+   ========================================================= */
+
+@keyframes jnScenarioPan{
+  from{object-position:center 25%}
+  to{object-position:center 38%}
+}
+
+@media(hover:none) and (pointer:coarse){
+
+  body:has(.jy-page.jy-jeanne) .jn-scene-image img{
+    animation:jnScenarioPan 9s ease-in-out infinite alternate!important;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  body:has(.jy-page.jy-jeanne) .jeanne-page *,
+  body:has(.jy-page.jy-jeanne) .jeanne-page *::before,
+  body:has(.jy-page.jy-jeanne) .jeanne-page *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-scenario:hover,
+  body:has(.jy-page.jy-jeanne) .jn-original-link:hover,
+  body:has(.jy-page.jy-jeanne) .jn-creator-links a:hover,
+  body:has(.jy-page.jy-jeanne) .jn-text-link:hover{
+    transform:none!important;
+  }
+}
+
+
+/* =========================================================
+   V6 — HERO MASK COMPOSITING FIX
+   Ambriel/Yuno both apply the fade directly to the IMG without
+   a backdrop-filtered/clipping ancestor. Jeanne's hero used
+   both overflow:hidden and backdrop-filter, so V6 removes those
+   compositor conditions and mirrors the known-working pattern.
+   ========================================================= */
+
+/* Let the masked portrait composite normally.
+   The hero's own background/border still respect border-radius. */
+body:has(.jy-page.jy-jeanne) .jn-hero{
+  overflow:visible!important;
+
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+
+  isolation:auto!important;
+  contain:none!important;
+}
+
+/* Keep decorative hero art from interfering with portrait compositing. */
+body:has(.jy-page.jy-jeanne) .jn-hero::after{
+  z-index:0!important;
+}
+
+/* Portrait wrapper remains a plain, unmasked positioning box. */
+body:has(.jy-page.jy-jeanne) .jn-portrait{
+  position:relative!important;
+  z-index:2!important;
+
+  align-self:end!important;
+  overflow:visible!important;
+
+  -webkit-mask:none!important;
+  mask:none!important;
+
+  filter:none!important;
+  isolation:auto!important;
+  contain:none!important;
+}
+
+/* Exact Ambriel-style desktop fade:
+   opaque through most of the figure, then a clean dissolve. */
+body:has(.jy-page.jy-jeanne) .jn-portrait img{
+  position:relative!important;
+  z-index:2!important;
+
+  display:block!important;
+
+  width:100%!important;
+  height:auto!important;
+  max-height:710px!important;
+
+  margin:0 auto!important;
+
+  object-fit:contain!important;
+  object-position:center top!important;
+
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+
+  -webkit-mask-image:linear-gradient(
+    to bottom,
+    black 78%,
+    transparent 100%
+  )!important;
+
+  mask-image:linear-gradient(
+    to bottom,
+    black 78%,
+    transparent 100%
+  )!important;
+
+  -webkit-mask-repeat:no-repeat!important;
+  mask-repeat:no-repeat!important;
+
+  -webkit-mask-position:0 0!important;
+  mask-position:0 0!important;
+
+  -webkit-mask-size:100% 100%!important;
+  mask-size:100% 100%!important;
+
+  filter:none!important;
+  opacity:1!important;
+
+  /* No transform: keep the mask and the actual image box aligned. */
+  transform:none!important;
+}
+
+
+/* Tablet — same pattern Ambriel uses: start fade earlier. */
+@media(min-width:769px) and (max-width:1024px){
+
+  body:has(.jy-page.jy-jeanne) .jn-portrait img{
+    -webkit-mask-image:linear-gradient(
+      to bottom,
+      black 64%,
+      transparent 100%
+    )!important;
+
+    mask-image:linear-gradient(
+      to bottom,
+      black 64%,
+      transparent 100%
+    )!important;
+  }
+}
+
+
+/* Mobile — mirrors Ambriel's 60% mobile fade. */
+@media(max-width:768px){
+
+  body:has(.jy-page.jy-jeanne) .jn-hero{
+    overflow:visible!important;
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-portrait img{
+    -webkit-mask-image:linear-gradient(
+      to bottom,
+      black 60%,
+      transparent 100%
+    )!important;
+
+    mask-image:linear-gradient(
+      to bottom,
+      black 60%,
+      transparent 100%
+    )!important;
+
+    transform:none!important;
+  }
+}
+
+
+/* =========================================================
+   V7 — PORTRAIT-ONLY DISSOLVE
+   The apparent "fade" in V6 was mostly the HERO PANEL itself:
+   its background went from .84 opacity on the left to .12 on
+   the right. V7 removes that frame fade and puts the dissolve
+   ONLY over Jeanne's lower skirt.
+
+   This deliberately does NOT depend on CSS mask rendering.
+   ========================================================= */
+
+/* Keep the frame visually consistent from left to right. */
+body:has(.jy-page.jy-jeanne) .jn-hero{
+  overflow:hidden!important;
+
+  background:
+    radial-gradient(
+      circle at 78% 22%,
+      rgba(var(--jn-blue-rgb),.045),
+      transparent 32%
+    ),
+    linear-gradient(
+      105deg,
+      rgba(7,14,10,.88) 0%,
+      rgba(8,16,12,.84) 52%,
+      rgba(8,16,12,.80) 100%
+    )!important;
+
+  -webkit-backdrop-filter:blur(2px)!important;
+  backdrop-filter:blur(2px)!important;
+}
+
+/* Stop testing browser masks here; V7 uses a local visual
+   dissolve that Chub cannot ignore. */
+body:has(.jy-page.jy-jeanne) .jn-portrait{
+  position:relative!important;
+  z-index:2!important;
+
+  align-self:end!important;
+
+  overflow:visible!important;
+
+  -webkit-mask:none!important;
+  mask:none!important;
+}
+
+body:has(.jy-page.jy-jeanne) .jn-portrait img{
+  -webkit-mask:none!important;
+  mask:none!important;
+
+  filter:none!important;
+  transform:none!important;
+}
+
+/* This overlay exists ONLY inside Jeanne's portrait wrapper.
+   It darkens/erases the bottom of the skirt into the same
+   green-black tone used by the hero panel. */
+body:has(.jy-page.jy-jeanne) .jn-portrait::after{
+  content:"";
+
+  position:absolute!important;
+
+  left:-5%!important;
+  right:-5%!important;
+  bottom:-1px!important;
+
+  z-index:5!important;
+
+  height:37%!important;
+
+  pointer-events:none!important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8,16,12,0) 0%,
+      rgba(8,16,12,.03) 14%,
+      rgba(8,16,12,.10) 27%,
+      rgba(8,16,12,.23) 42%,
+      rgba(8,16,12,.43) 58%,
+      rgba(8,16,12,.66) 73%,
+      rgba(8,16,12,.84) 86%,
+      rgba(8,16,12,.96) 95%,
+      rgb(8,16,12) 100%
+    )!important;
+}
+
+/* A little extra darkening immediately behind the lowest part
+   makes the final transition disappear instead of revealing a
+   second horizontal edge. */
+body:has(.jy-page.jy-jeanne) .jn-portrait::before{
+  content:"";
+
+  position:absolute!important;
+
+  left:4%!important;
+  right:2%!important;
+  bottom:-3px!important;
+
+  z-index:1!important;
+
+  height:18%!important;
+
+  pointer-events:none!important;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(8,16,12,.84) 0%,
+      rgba(8,16,12,.48) 48%,
+      transparent 76%
+    )!important;
+
+  filter:blur(8px)!important;
+}
+
+
+/* Tablet */
+@media(min-width:769px) and (max-width:1024px){
+
+  body:has(.jy-page.jy-jeanne) .jn-portrait::after{
+    height:39%!important;
+  }
+}
+
+
+/* Mobile */
+@media(max-width:768px){
+
+  body:has(.jy-page.jy-jeanne) .jn-hero{
+    overflow:hidden!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-portrait::after{
+    left:-7%!important;
+    right:-7%!important;
+
+    height:40%!important;
+  }
+
+  body:has(.jy-page.jy-jeanne) .jn-portrait::before{
+    height:20%!important;
+  }
+}
