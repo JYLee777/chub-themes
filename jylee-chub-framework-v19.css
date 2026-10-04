@@ -1466,3 +1466,288 @@ body:has(.jy-page.jy-beatrix) .jy-scenario-card:hover .jy-scenario-img{
     text-align:center!important;
   }
 }
+
+
+/* =========================================================
+   CHANGELOG + MUSIC PLAYER + LYRICS
+   ========================================================= */
+
+
+/* =========================
+   CHANGELOG
+   ========================= */
+
+body:has(.jy-page.jy-beatrix) .jy-changelog{
+  margin-top:22px;
+  border-top:1px solid rgba(227,164,77,.16);
+  border-bottom:1px solid rgba(227,164,77,.10);
+}
+
+body:has(.jy-page.jy-beatrix) .jy-changelog>summary{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  padding:15px 2px;
+
+  cursor:pointer;
+  list-style:none;
+
+  color:#e8bc79;
+
+  font-family:var(--jy-font-display);
+  font-size:13px;
+  letter-spacing:.08em;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-changelog>summary::-webkit-details-marker{
+  display:none;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-change-latest{
+  margin-left:auto;
+
+  color:rgba(200,196,187,.72);
+
+  font-family:var(--jy-font-body);
+  font-size:9px;
+  font-weight:600;
+
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-change-plus{
+  color:#48d4d8;
+
+  font-size:20px;
+  font-weight:400;
+  line-height:1;
+
+  transition:transform .2s ease;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-changelog[open] .jy-change-plus{
+  transform:rotate(45deg);
+}
+
+body:has(.jy-page.jy-beatrix) .jy-changelog-body{
+  padding:2px 4px 15px;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-change-entry{
+  margin:0;
+  padding:9px 0;
+
+  color:var(--jy-text-soft);
+
+  font-family:var(--jy-font-body);
+  font-size:13px;
+  line-height:1.7;
+
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+body:has(.jy-page.jy-beatrix) .jy-change-entry:last-child{
+  border-bottom:none;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-change-entry>span{
+  display:inline-block;
+
+  margin-right:8px;
+
+  color:#7edee1;
+
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.12em;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-change-entry strong{
+  color:#f2dfbf;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-change-entry em{
+  color:#e8bc79;
+}
+
+
+/* =========================
+   MUSIC PLAYER
+   ========================= */
+
+body:has(.jy-page.jy-beatrix) .jy-music-player{
+  margin-top:20px;
+  padding:16px 18px;
+
+  border:1px solid rgba(227,164,77,.16);
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(200,63,58,.075),
+      rgba(72,212,216,.035)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 8px 20px rgba(0,0,0,.18);
+}
+
+
+/* ===== TRACK INFO ===== */
+
+body:has(.jy-page.jy-beatrix) .jy-music-label{
+  margin:0 0 4px;
+
+  color:#7edee1;
+
+  font-family:var(--jy-font-body);
+  font-size:9px;
+  font-weight:700;
+
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-music-title{
+  margin:0 0 12px;
+
+  color:#f2dfbf;
+
+  font-family:var(--jy-font-display);
+  font-size:17px;
+  line-height:1.35;
+}
+
+
+/* ===== AUDIO PLAYER ===== */
+
+body:has(.jy-page.jy-beatrix) .jy-music-player audio{
+  display:block!important;
+
+  width:100%!important;
+  height:40px!important;
+
+  margin:0!important;
+
+  color-scheme:dark;
+
+  filter:
+    saturate(.82)
+    brightness(.94);
+}
+
+
+/* =========================
+   COLLAPSIBLE LYRICS
+   ========================= */
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics{
+  margin-top:14px;
+
+  border-top:1px solid rgba(227,164,77,.13);
+}
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics>summary{
+  display:flex;
+  align-items:center;
+
+  padding:12px 2px 4px;
+
+  cursor:pointer;
+  list-style:none;
+
+  color:#e8bc79;
+
+  font-family:var(--jy-font-body);
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics>summary::-webkit-details-marker{
+  display:none;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics-plus{
+  margin-left:auto;
+
+  color:#48d4d8;
+
+  font-size:18px;
+  font-weight:400;
+  line-height:1;
+
+  transition:transform .2s ease;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics[open] .jy-lyrics-plus{
+  transform:rotate(45deg);
+}
+
+
+/* ===== LYRICS TEXT ===== */
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics-text{
+  display:block;
+
+  width:100%;
+
+  margin:10px 0 2px;
+  padding:14px 16px;
+
+  border:none;
+  border-left:2px solid rgba(227,164,77,.28);
+  border-radius:0 8px 8px 0;
+
+  background:rgba(5,8,13,.22);
+
+  color:rgba(232,228,219,.84);
+
+  font-family:var(--jy-font-body);
+  font-size:13px;
+  font-weight:400;
+  line-height:1.85;
+
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  word-break:normal;
+
+  overflow-x:hidden;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width:768px){
+
+  body:has(.jy-page.jy-beatrix) .jy-changelog>summary{
+    gap:8px;
+  }
+
+  body:has(.jy-page.jy-beatrix) .jy-change-latest{
+    font-size:8px;
+  }
+
+  body:has(.jy-page.jy-beatrix) .jy-music-player{
+    padding:14px;
+  }
+
+  body:has(.jy-page.jy-beatrix) .jy-music-title{
+    font-size:16px;
+  }
+
+  body:has(.jy-page.jy-beatrix) .jy-lyrics-text{
+    padding:11px 12px;
+
+    font-size:12.5px;
+    line-height:1.8;
+  }
+}
