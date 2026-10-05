@@ -1487,14 +1487,11 @@ body:has(.jy-page.jy-beatrix) .jy-changelog>summary{
   display:flex;
   align-items:center;
   gap:14px;
-
   padding:15px 2px;
-
   cursor:pointer;
   list-style:none;
 
   color:#e8bc79;
-
   font-family:var(--jy-font-display);
   font-size:13px;
   letter-spacing:.08em;
@@ -1508,7 +1505,6 @@ body:has(.jy-page.jy-beatrix) .jy-change-latest{
   margin-left:auto;
 
   color:rgba(200,196,187,.72);
-
   font-family:var(--jy-font-body);
   font-size:9px;
   font-weight:600;
@@ -1519,11 +1515,9 @@ body:has(.jy-page.jy-beatrix) .jy-change-latest{
 
 body:has(.jy-page.jy-beatrix) .jy-change-plus{
   color:#48d4d8;
-
   font-size:20px;
   font-weight:400;
   line-height:1;
-
   transition:transform .2s ease;
 }
 
@@ -1540,7 +1534,6 @@ body:has(.jy-page.jy-beatrix) .jy-change-entry{
   padding:9px 0;
 
   color:var(--jy-text-soft);
-
   font-family:var(--jy-font-body);
   font-size:13px;
   line-height:1.7;
@@ -1554,11 +1547,9 @@ body:has(.jy-page.jy-beatrix) .jy-change-entry:last-child{
 
 body:has(.jy-page.jy-beatrix) .jy-change-entry>span{
   display:inline-block;
-
   margin-right:8px;
 
   color:#7edee1;
-
   font-size:10px;
   font-weight:700;
   letter-spacing:.12em;
@@ -1596,14 +1587,10 @@ body:has(.jy-page.jy-beatrix) .jy-music-player{
     0 8px 20px rgba(0,0,0,.18);
 }
 
-
-/* ===== TRACK INFO ===== */
-
 body:has(.jy-page.jy-beatrix) .jy-music-label{
   margin:0 0 4px;
 
   color:#7edee1;
-
   font-family:var(--jy-font-body);
   font-size:9px;
   font-weight:700;
@@ -1616,21 +1603,16 @@ body:has(.jy-page.jy-beatrix) .jy-music-title{
   margin:0 0 12px;
 
   color:#f2dfbf;
-
   font-family:var(--jy-font-display);
   font-size:17px;
   line-height:1.35;
 }
-
-
-/* ===== AUDIO PLAYER ===== */
 
 body:has(.jy-page.jy-beatrix) .jy-music-player audio{
   display:block!important;
 
   width:100%!important;
   height:40px!important;
-
   margin:0!important;
 
   color-scheme:dark;
@@ -1647,7 +1629,6 @@ body:has(.jy-page.jy-beatrix) .jy-music-player audio{
 
 body:has(.jy-page.jy-beatrix) .jy-lyrics{
   margin-top:14px;
-
   border-top:1px solid rgba(227,164,77,.13);
 }
 
@@ -1655,7 +1636,7 @@ body:has(.jy-page.jy-beatrix) .jy-lyrics>summary{
   display:flex;
   align-items:center;
 
-  padding:12px 2px 4px;
+  padding:12px 2px 7px;
 
   cursor:pointer;
   list-style:none;
@@ -1678,7 +1659,6 @@ body:has(.jy-page.jy-beatrix) .jy-lyrics-plus{
   margin-left:auto;
 
   color:#48d4d8;
-
   font-size:18px;
   font-weight:400;
   line-height:1;
@@ -1691,34 +1671,58 @@ body:has(.jy-page.jy-beatrix) .jy-lyrics[open] .jy-lyrics-plus{
 }
 
 
-/* ===== LYRICS TEXT ===== */
+/* ===== LYRICS SCROLL AREA ===== */
 
 body:has(.jy-page.jy-beatrix) .jy-lyrics-text{
   display:block;
-
   width:100%;
 
-  margin:10px 0 2px;
+  max-height:340px;
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  margin:8px 0 2px;
   padding:14px 16px;
 
-  border:none;
-  border-left:2px solid rgba(227,164,77,.28);
+  border:1px solid rgba(227,164,77,.10);
+  border-left:2px solid rgba(227,164,77,.32);
   border-radius:0 8px 8px 0;
 
-  background:rgba(5,8,13,.22);
+  background:rgba(5,8,13,.24);
 
-  color:rgba(232,228,219,.84);
+  color:rgba(232,228,219,.90);
 
-  font-family:var(--jy-font-body);
-  font-size:13px;
-  font-weight:400;
-  line-height:1.85;
+  font-family:
+    ui-monospace,
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size:12.5px;
+  font-weight:500;
+  line-height:1.7;
+  letter-spacing:.005em;
 
   white-space:pre-wrap;
   overflow-wrap:anywhere;
   word-break:normal;
 
-  overflow-x:hidden;
+  scrollbar-width:thin;
+  scrollbar-color:#e3a44d transparent;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics-text::-webkit-scrollbar{
+  width:6px;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics-text::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+body:has(.jy-page.jy-beatrix) .jy-lyrics-text::-webkit-scrollbar-thumb{
+  background:#e3a44d;
+  border-radius:3px;
 }
 
 
@@ -1745,9 +1749,10 @@ body:has(.jy-page.jy-beatrix) .jy-lyrics-text{
   }
 
   body:has(.jy-page.jy-beatrix) .jy-lyrics-text{
-    padding:11px 12px;
+    max-height:260px;
+    padding:12px 13px;
 
-    font-size:12.5px;
-    line-height:1.8;
+    font-size:12px;
+    line-height:1.7;
   }
 }
